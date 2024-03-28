@@ -3,8 +3,7 @@
 <html lang="fr">
     <h1>Instructions</h1>
     <div>
-        <p>Bienvenue dans&nbsp;cette activit&eacute; de correction par les pairs.</p>
-<p>Vous allez mettre en pratique une bonne partie de ce que vous avez appris dans la partie 1 et 2 de ce cours :</p>
+<p>Vous allez mettre en pratique une bonne partie de ce que vous avez appris de ce cours :</p>
 <ul>
 <li>cr&eacute;ation de classes;</li>
 <li>h&eacute;ritage;</li>
