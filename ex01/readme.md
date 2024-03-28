@@ -3,7 +3,8 @@
 <html lang="fr">
     <h1>Instructions</h1>
     <h2>Exercice 01 - Garage</h2>
-    <div>
+    <p>Dans votre dépot git créer un nouveau dossier <b>ex01_Garage</b></p>
+<div>
 <p>Vous allez mettre en pratique une bonne partie de ce que vous avez appris de ce cours :</p>
 <ul>
 <li>cr&eacute;ation de classes;</li>
