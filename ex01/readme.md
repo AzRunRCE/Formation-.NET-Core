@@ -7,7 +7,7 @@
 <ul>
 <li>cr&eacute;ation de classes;</li>
 <li>h&eacute;ritage;</li>
-<li>packages;</li>
+<li>namespace;</li>
 <li>&eacute;num&eacute;ration;</li>
 <li>g&eacute;n&eacute;rique;</li>
 <li>fichiers.</li>
@@ -18,9 +18,9 @@
 <p>&nbsp;</p>
 <p>&Eacute;tant d&rsquo;un naturel magnanime, je vous donne une classe de test pour votre programme :</p>
 <pre>public class Program {
-    public static void main(string[] args) {
+    public static void Main(string[] args) {
    	 Garage garage = new Garage();   
-   	 System.out.println(garage);
+   	 Console.WriteLine(garage);
    	 
    	 Vehicule lag1 = new Lagouna();
    	 lag1.SetMoteur(new MoteurEssence("150 Chevaux", 10256d));
@@ -66,10 +66,22 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>Et pour que vous ayez&nbsp;une id&eacute;e de ce que ce programme pourrait vous donner, voici deux screenshots, celui-ci&nbsp;lors du premier lancement de cette classe de test :</p>
-<p><img src="http://sdz-upload.s3.amazonaws.com/prod/upload/CaptureEcran11.png" alt="Premier screenshot" width="363" height="116" /></p>
+<pre>
+Aucune voiture sauvegardée !
+**************************
+*     Garage .NET        *
+**************************
+</pre>
 <p>&nbsp;</p>
 <p>Et&nbsp;celui-l&agrave;&nbsp;apr&egrave;s le deuxi&egrave;me lancement (vous constaterez que mon garage n&rsquo;est plus vide &agrave; ce moment-l&agrave;) :</p>
-<p><img src="http://sdz-upload.s3.amazonaws.com/prod/upload/CaptureEcran21.png" alt="Second screenshot" width="644" height="106" /></p>
+<p><pre>
++ Voiture RENO : Lagouna Noteur ESSENCE 150 Chevaux (23123.0€) [GPS (113.5€), Siége chauffant (562.9€), Vitre electrique (212.35€)] d'une valeur totale de 24011.75 €
++ Voiture PIGEOT : A330B Moteur ELECTATQUE 1508 W (28457.8€) (Climatisation (347.3€), Barre de toit (29.9€), Sitge chauffant (562.9€)] d'une valeur totale de 29397,100000900082 €
++ Woiture TROEM : 04 Moteur DIESEL 208 Hei (25147.0€) [Barre de toit (29.9€), Climatisation (347.3€), GPS (113.5¢€}] d'une valeur totale de 25637.? €
++ Voiture REWO : Lagouna Moteur DIESEL 508 Hdi (23123.¢€) [] d'une valeur totale de 23123.0 €
++ Wolture PIGEOT ; A3303 Moteur HYBRIDE ESSEMCE/Electrique (28457.8€) [Vitre electrique (212.35€), Barre de toit (29.9€)] d'une valeur totale de 28699.25 €
++ Voiture TROEM : 04 Moteur ELECTRIQUE 108 KW (25147.0€) [Siége chauffant (562.9€), Barre de toit (29.9€}, Climatisation (347.34), GPS (113.5€), Vitre electrique (212.35€)] d'une
+</pre></p>
 <p>&nbsp;</p>
 <p>C'est &agrave; vous !</p>
 <p>&nbsp;</p>
