@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <title>Exercice 02 - La bataille corse</title>
+</head>
+<header>
+  <h2>Exercice 02 - La bataille corse</h2>
+</header>
+<body>
+    <h3>Instructions</h3>
+	
+<p>Dans votre dépot git créez un nouveau dossier <b>ex02_BattaileCorse</b></p>
+<p><b>Nombre de joueurs :</b> minimum 2</p>
+<p><b>Jeu de cartes :</b> 32 cartes</p>
+<p><b>But du jeu :</b> Gagner toutes les cartes</p>
+<p><b>Mise en place :</b> Les cartes sont distribuées équitablement entre tous les joueurs.</p>
+
+<p>Le premier joueur retourne sa première carte. Si celle-ci est un habillé ou un as, c’est un défi.</p>
+
+<p>Le joueur suivant doit alors retourner un habillé ou un as. Pour cela, il a droit à un nombre de tentatives en fonction de la carte défi posé par son adversaire :</p>
+
+<pre>
+Carte	Nombre de tentatives autorisées
+As	1
+Roi	2
+Dame	3
+Valet	4
+</pre>
+<p>
+S’il échoue, le joueur ayant lancé le défi remporte toutes les cartes mises en jeu. Sinon, c’est au joueur suivant de réaliser le nouveau défi proposé.
+Lorsqu’un joueur n’a plus de carte, il est éliminé. Le joueur précédent remporte toutes les cartes mises en jeu. C’est ensuite au joueur suivant de jouer.
+
+<br><br>
+<b>Instructions :</b>
+<br>
+• Vous devez utilisez une liste chainée que vous implémenterez. voir schéma (ci-dessous) <br>
+• Une première instance de la classe Anneau sera ensuite créé pour contenir les joueurs et ainsi permettre de gérer les tours de jeux de ceux-ci. 
+<br>
+Pour chaque joueur, une autre instance de la classe Anneau est créé pour contenir les cartes détenues par celui-ci.
+</p>
+<a href="https://fr.wikipedia.org/wiki/Liste_cha%C3%AEn%C3%A9e">Schema d'implémentation d'une liste chainée</a>
+<img src="schema.png"></img><br>
+<p>•	Ecrire une classe BatailleCorse permettant de simuler une partie de bataille corse. Exemple de déroulé :</p>
+<pre>
+Julie joue un AS de PIQUE
+Maxime joue un HUIT de COEUR
+Le défi est perdu ! Julie remporte 2 cartes
+</pre>
+<pre>
+Mélanie joue un DAME de TREFLE
+Julie joue un AS de CARREAU
+Maxime joue un AS de TREFLE
+Mélanie joue un ROI de CARREAU
+Julie joue un HUIT de COEUR
+Julie joue un AS de PIQUE
+Maxime joue un NEUF de TREFLE
+Le défi est perdu ! Julie remporte 7 cartes
+</pre>
+<pre>
+Mélanie joue un NEUF de COEUR
+Julie joue un HUIT de CARREAU
+Maxime joue un SEPT de TREFLE
+Mélanie joue un DAME de PIQUE
+Julie joue un NEUF de TREFLE
+Julie joue un AS de PIQUE
+Maxime joue un DIX de COEUR
+Le défi est perdu ! Julie remporte 7 cartes
+</pre>
+<pre>
+Mélanie joue un HUIT de TREFLE
+Julie joue un HUIT de COEUR
+Maxime joue un VALET de PIQUE
+Mélanie joue un DIX de PIQUE
+Mélanie joue un VALET de COEUR
+Julie joue un DIX de COEUR
+Julie joue un AS de PIQUE
+Maxime joue un HUIT de PIQUE
+Le défi est perdu ! Julie remporte 8 cartes
+</pre>
+<pre>
+Mélanie joue un NEUF de CARREAU
+Julie joue un NEUF de TREFLE
+Maxime joue un SEPT de COEUR
+Mélanie joue un VALET de CARREAU
+Julie joue un HUIT de PIQUE
+Julie joue un AS de PIQUE
+Maxime joue un ROI de COEUR
+Mélanie joue un DAME de CARREAU
+Julie joue un DIX de COEUR
+Julie joue un VALET de COEUR
+Maxime joue un DIX de CARREAU
+Maxime joue un DAME de COEUR
+Mélanie n'a plus de carte ! Elimination !
+Le défi est perdu ! Maxime remporte 12 cartes
+</pre>
+<pre>
+Julie joue un DIX de PIQUE
+Maxime joue un NEUF de CARREAU
+Julie joue un VALET de PIQUE
+Maxime joue un DAME de COEUR
+Julie joue un HUIT de COEUR
+Julie joue un HUIT de TREFLE
+Julie joue un DAME de PIQUE
+Maxime joue un DIX de CARREAU
+Maxime joue un VALET de COEUR
+Julie joue un SEPT de TREFLE
+Julie joue un HUIT de CARREAU
+Julie joue un NEUF de COEUR
+Julie joue un ROI de CARREAU
+Maxime joue un DIX de COEUR
+Maxime joue un DAME de CARREAU
+Julie joue un AS de TREFLE
+Maxime joue un ROI de COEUR
+Julie joue un AS de CARREAU
+Maxime joue un AS de PIQUE
+Julie joue un DAME de TREFLE
+Maxime joue un HUIT de PIQUE
+Maxime joue un VALET de CARREAU
+Julie joue un DIX de TREFLE
+Julie joue un ROI de TREFLE
+Maxime joue un SEPT de COEUR
+Maxime joue un NEUF de TREFLE
+Le défi est perdu ! Julie remporte 26 cartes
+</pre>
+<pre>
+Julie joue un AS de COEUR
+Maxime n'a plus de carte ! Elimination !
+Le défi est perdu ! Julie remporte 1 cartes
+Julie gagne !
+</pre>
+</body>
+</html>
