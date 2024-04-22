@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <title>Apprendre le C# - MVC</title>
+</head>
+
+
+<body>
+    <header>
+        <h1>Apprendre le C# - MVC</h1>
+    </header>
+    <h2>
+        Introduction rapide</h3>
+
+        <p>
+            Le MVC est un pattern permettant de séparer les responsabilités dans une application permettant la persistances de données et leur gestion via une interface utilisateur
+        </p>
+        <p>
+            Séparer ces responsabilités en plusieurs couches permet une meilleure compréhension pour un développeur qui arrive ultérieurement sur le projet. Cette lisibilité optimisé et cette testabilité permet d'avoir au final un projet plus maintenable.
+        </p>
+        <p>Pour ce chapitre, nous allons réparer et faire évoluer une application de gestion d'entrepôt (appelé WMS)</p>
+
+        <h2>Exercices</h2>
+        <p>Récupérer le projet de départ et commencez les exercices</p>
+
+        <h3>Exercice 1 : Réparer la page qui liste les entrepôts</h3>
+
+        <p>
+            Démarrer le projet, accèder à /Warehouse (dans mon cas "https://localhost:7179/Warehouse").
+            <b>Vous devez tomber sur une page d'erreur</b>. Réparez cette page.
+        </p>
+
+        <h4>Résultat attendu</h4>
+        <div><img src="./readme_ressources/warehouse_page.png" alt=""></div>
+        <h3>Exercice 2 : Afficher les valeurs initiales sur la page de modification</h3>
+
+        <p>
+            Sur la page "/Warehouse", cliquez sur le lien "edit" d'un des entrepôt.
+            A part l'Id, les champs sont vides car les données de l'entrepôt ne sont pas passés à la vue (seul l'id est passé via le lien).
+            Faîtes en sorte que les données de l'entrepôt selectionné s'affichent dans les champs de la page d'édition.
+        </p>
+
+        <h3>Exercice 3 : Ajouter un lien dans le menu du haut, pointant vers la page de liste des entrepôts</h3>
+
+        <p>
+            Ce lien devra apparaître dans le menu, peut importe la page sur laquel on se trouve. Voici la ligne de code Razor à rajouter (elle sera expliqué plus tard dans la partie Razor du cours) : 
+            <br><code>
+                &lt;li class=&quot;nav-item&quot;&gt;
+                    &lt;a class=&quot;nav-link text-dark&quot; asp-area=&quot;&quot; asp-controller=&quot;Warehouse&quot; asp-action=&quot;Index&quot;&gt;Warehouse&lt;/a&gt;
+                &lt;/li&gt;
+            </code>
+        </p>
+        
+        <H4>Résultat attendu</H4>
+        <p>Comme dans les 2 captures d'écran ci-dessous, vous devez avoir le nouvel élement dans le menu peut-importe la page où vous vous trouvez.</p>
+        <div class="col-2">
+            <div><img src="./readme_ressources/warehouse_page_avec_warehouse_menu.png" alt=""></div>
+            <div><img src="./readme_ressources/detail_avec_warehouse_menu.png" alt=""></div>
+        </div>
+
+        <h4>Exercice 4</h4>
+        <p>A l'aide du générateur de code de Visual Studio, ajouter la page Create</p>
+</body>
+
+</html>
