@@ -28,7 +28,7 @@
         <h2>Exercices</h2>
         <p>Récupérer le projet de départ et commencez les exercices.</p>
 
-        <h3>Exercice 1 : Réparer la page qui liste les entrepôts</h3>
+        <h3>Exercice A : Réparer la page qui liste les entrepôts</h3>
 
         <p>
             Démarrer le projet, accèder à /Warehouse (dans mon cas "https://localhost:7179/Warehouse").
@@ -37,7 +37,7 @@
 
         <h4>Résultat attendu</h4>
         <div><img src="./readme_ressources/warehouse_page.png" alt=""></div>
-        <h3>Exercice 2 : Afficher les valeurs initiales sur la page de modification</h3>
+        <h3>Exercice B : Afficher les valeurs initiales sur la page de modification</h3>
 
         <p>
             Sur la page "/Warehouse", cliquez sur le lien "edit" d'un des entrepôt.
@@ -45,17 +45,17 @@
             Faîtes en sorte que les données de l'entrepôt selectionné s'affichent dans les champs de la page d'édition.
         </p>
 
-        <h3>Exercice 3 : Ajouter un lien dans le menu du haut, pointant vers la page de liste des entrepôts</h3>
+        <h3>Exercice C : Ajouter un lien dans le menu du haut, pointant vers la page de liste des entrepôts</h3>
 
         <p>
-            Ce lien devra apparaître dans le menu, peut importe la page sur laquel on se trouve. Voici la ligne de code Razor à rajouter (elle sera expliqué plus tard dans la partie Razor du cours) : 
+            Ce lien devra apparaître dans le menu, peut importe la page sur laquel on se trouve. Voici la ligne de code Razor à rajouter (elle sera expliqué plus tard dans la partie Razor du cours) :
             <br><code>
                 &lt;li class=&quot;nav-item&quot;&gt;
-                    &lt;a class=&quot;nav-link text-dark&quot; asp-area=&quot;&quot; asp-controller=&quot;Warehouse&quot; asp-action=&quot;Index&quot;&gt;Warehouse&lt;/a&gt;
+                &lt;a class=&quot;nav-link text-dark&quot; asp-area=&quot;&quot; asp-controller=&quot;Warehouse&quot; asp-action=&quot;Index&quot;&gt;Warehouse&lt;/a&gt;
                 &lt;/li&gt;
             </code>
         </p>
-        
+
         <H4>Résultat attendu</H4>
         <p>Comme dans les 2 captures d'écran ci-dessous, vous devez avoir le nouvel élement dans le menu peut-importe la page où vous vous trouvez.</p>
         <div class="col-2">
@@ -63,8 +63,12 @@
             <div><img src="./readme_ressources/detail_avec_warehouse_menu.png" alt=""></div>
         </div>
 
-        <h4>Exercice 4</h4>
-        <p>A l'aide du générateur de code de Visual Studio, ajouter la page Create</p>
+        <h4>Exercice D : Créer une page d'ajout d'entrepôt</h4>
+        <p>Vous remarquerez qu'il serait dommage de copier le formulaire présent dans Edit.chtml pour le coller dans un fichier Create.cshtml</p>
+        <p>Copiez le formulaire (<code>&lt;form&gt; ... &lt;/form&gt;</code>) d'édition dans un fichier _WarehouseForm.cshtml dans le dossier Views/Shared/</p>
+        <p>Dans Edit.cshtml, supprimez le formulaire et appellez _WarehouseForm.cshtml de cette façon : <code> @{ await Html.RenderPartialAsync("_WarehouseForm", Model); }</code></p>
+        <p>Créez un fichier Create.cshtml qui appelle également le formulaire</p>
+        <p>Utilisez ViewData (comme fait pour le titre de la page) pour changer la méthode de controller appelé dans <code>asp-action</code> dans le formulaire pour ne pas appeler la méthode d'édition dans le scénario de création.</p>
 </body>
 
 </html>
