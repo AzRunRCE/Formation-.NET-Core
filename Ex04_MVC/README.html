@@ -63,12 +63,18 @@
             <div><img src="./readme_ressources/detail_avec_warehouse_menu.png" alt=""></div>
         </div>
 
-        <h4>Exercice D : Créer une page d'ajout d'entrepôt</h4>
+
+        <h4>Exercice E : Créer une page d'ajout d'entrepôt</h4>
         <p>Vous remarquerez qu'il serait dommage de copier le formulaire présent dans Edit.chtml pour le coller dans un fichier Create.cshtml</p>
         <p>Copiez le formulaire (<code>&lt;form&gt; ... &lt;/form&gt;</code>) d'édition dans un fichier _WarehouseForm.cshtml dans le dossier Views/Shared/</p>
         <p>Dans Edit.cshtml, supprimez le formulaire et appellez _WarehouseForm.cshtml de cette façon : <code> @{ await Html.RenderPartialAsync("_WarehouseForm", Model); }</code></p>
         <p>Créez un fichier Create.cshtml qui appelle également le formulaire</p>
         <p>Utilisez ViewData (comme fait pour le titre de la page) pour changer la méthode de controller appelé dans <code>asp-action</code> dans le formulaire pour ne pas appeler la méthode d'édition dans le scénario de création.</p>
+
+
+        <h4>Exercice D : Créer une page d'ajout d'entrepôt</h4>
+        Créer un code d'accès en TempData (qui se perd à partir de la fin de la 3 eme request) Veuillez copier ce code d'accès, il ne sera plus disponible. Faire une WareHouseService qui retourne le code
+        Faire une clé en md5. Le warehouse est protégé par un code, on peut en créer un mais il n'est distribué qu'une seule fois. Ce code n'as pas pour but d'être persisté côté BDD
 </body>
 
 </html>
