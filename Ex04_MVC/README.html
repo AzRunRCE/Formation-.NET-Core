@@ -64,7 +64,7 @@
         </div>
 
 
-        <h4>Exercice E : Créer une page d'ajout d'entrepôt</h4>
+        <h4>Exercice D : Créer une page d'ajout d'entrepôt</h4>
         <p>Vous remarquerez qu'il serait dommage de copier le formulaire présent dans Edit.chtml pour le coller dans un fichier Create.cshtml</p>
         <p>Copiez le formulaire (<code>&lt;form&gt; ... &lt;/form&gt;</code>) d'édition dans un fichier _WarehouseForm.cshtml dans le dossier Views/Shared/</p>
         <p>Dans Edit.cshtml, supprimez le formulaire et appellez _WarehouseForm.cshtml de cette façon : <code> @{ await Html.RenderPartialAsync("_WarehouseForm", Model); }</code></p>
@@ -72,10 +72,22 @@
         <p>Utilisez ViewData (comme fait pour le titre de la page) pour changer la méthode de controller appelé dans <code>asp-action</code> dans le formulaire pour ne pas appeler la méthode d'édition dans le scénario de création.</p>
 
 
-        <h4>Exercice D : Créer une page d'ajout d'entrepôt</h4>
-		<p>Etudier le code présent dans WareHouseService.cs</p>
-        Créer un code d'accès en TempData (qui se perd à partir de la fin de la 3 eme request) Veuillez copier ce code d'accès, il ne sera plus disponible. Faire une WareHouseService qui retourne le code
-        Faire une clé en md5. Le warehouse est protégé par un code, on peut en créer un mais il n'est distribué qu'une seule fois. Ce code n'as pas pour but d'être persisté côté BDD
+        <h4>Exercice E : Permettre la création d'un code d'accès avec TempData</h4>
+		<i>Le warehouse est protégé par un code, on peut en créer un mais il n'est distribué qu'une seule fois. 
+			Ce code n'est pas sauvegardé. A des fin de sécurité seul le md5 sur code d'accès est persisté.</i>
+		<li><strong>Contraintes:</strong> Vous devez utiliser TempData et avoir deux actions dans WarehouseController</li>
+		<li>Lire le code présent dans WareHouseService.cs</li>
+		<li>Dans WarehouseController, ajouter deux nouvelles Actions GenerateCode et ViewCode</li>
+		<li>Sur la page d'édition d'un warehouse, ajouter un button permettant de générer un code d'accès pour le warehouse courant.</li>
+        <li>Faite en sorte que l'ulisateur puisse recevoir son code après l'avoir générer.</li>
+		
+         
+		 
+		<h4>Exercice F : Permettre l'ouverture du code à partir du code d'accès</h4>
+		<p>Ajouter un formulaire qui permet d'ouvrir le code si celui est correct.</p>
+		<li><strong>Contraintes:</strong> Vous devez utiliser ViewBag pour la réponse (Code OK / Code KO)</li>
+		<h4>Soumettre votre solution</h4>
+		<p>Déposez ces exercices sur votre dépôt git créé à cet effet.</p>
 </body>
 
 </html>

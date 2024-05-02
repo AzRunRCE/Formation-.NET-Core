@@ -35,11 +35,11 @@ namespace Exercice_4_MVC.Service
             var hashedCode = GenerateHash(code);
 
             var currentWarehouse = dbContext.Warehouses.SingleOrDefault(w => w.Id == warehouseId);
-            if (currentWarehouse != null)
+            if (currentWarehouse == null)
                 throw new Exception("Warehouse inconnu");
             currentWarehouse!.CodeAccesMD5.Add(hashedCode);
 
-            return hashedCode;
+            return code;
 
         }
 
@@ -80,7 +80,7 @@ namespace Exercice_4_MVC.Service
 
         private string GenerateRandomString(int length)
         {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var random = new Random();
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
