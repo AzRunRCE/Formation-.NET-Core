@@ -10,6 +10,10 @@
 
         public int PostalCode { get; set; }
 
-        public int ActivationCode { get; set; }
+
+        /// <summary>
+        /// Cette liste contient les codes accès du warehouse en md5.
+        /// </summary>
+        public List<string> CodeAccesMD5 { get; set; } = new();
     }
 }

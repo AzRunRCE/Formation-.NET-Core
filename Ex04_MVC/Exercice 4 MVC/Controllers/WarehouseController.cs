@@ -1,4 +1,5 @@
 ﻿using Exercice_4_MVC.Models;
+using Exercice_4_MVC.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -7,44 +8,25 @@ namespace Exercice_4_MVC.Controllers
 {
     public class WarehouseController : Controller
     {
-        public static List<Warehouse> Warehouses { get; set; }
+
+        WarehouseService warehouseService; 
 
         public WarehouseController()
         {
-            if(WarehouseController.Warehouses == null)
-            {
-                WarehouseController.Warehouses = new List<Warehouse>()
-                {
-                    new Warehouse()
-                    {
-                        Id = 1,
-                        Name = "Entrepot de Paris",
-                        Address = "10 rue du csharp",
-                        PostalCode = 75000
-                    },
-                    new Warehouse()
-                    {
-                        Id = 2,
-                        Name = "Entrepot de Nantes",
-                        Address = "15 rue de .net",
-                        PostalCode = 44300
-                    }
-                };
-            }
-            
+            warehouseService = new WarehouseService();
         }
 
         // GET: WarehouseController
         public ActionResult Index()
         {
-            return View(WarehouseController.Warehouses);
+            return View(warehouseService.GetWarehouses());
         }
 
         // GET: WarehouseController/Details/5
         public ActionResult Details(int id)
         {
             // Search throught warehouses list the target warehouse by id
-            var foundWarehouse = WarehouseController.Warehouses.FirstOrDefault(w => w.Id == id);
+            var foundWarehouse = warehouseService.GetWarehouses().FirstOrDefault(w => w.Id == id);
 
             return View(foundWarehouse);
         }
@@ -65,7 +47,7 @@ namespace Exercice_4_MVC.Controllers
                 //int newId = WarehouseController.Warehouses.Select(w => w.Id).Aggregate((previusMax, current) => { return Math.Max(previusMax, current); }) + 1;
                 Warehouse warehouse = new Warehouse();
                 ApplyFormCollectionToWarehouse(collection, warehouse);
-                WarehouseController.Warehouses.Add(warehouse);
+                warehouseService.Add(warehouse);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -78,7 +60,7 @@ namespace Exercice_4_MVC.Controllers
         public ActionResult Edit(int id)
         {
             // Search throught warehouses list the target warehouse by id
-            var foundWarehouse = WarehouseController.Warehouses.FirstOrDefault(w => w.Id == id);
+            var foundWarehouse = warehouseService.GetWarehouses().FirstOrDefault(w => w.Id == id);
 
             return View();
         }
@@ -91,7 +73,7 @@ namespace Exercice_4_MVC.Controllers
             try
             {
                 // Search throught warehouses list the target warehouse by id
-                var foundWarehouse = WarehouseController.Warehouses.FirstOrDefault(w => w.Id == id);
+                var foundWarehouse = warehouseService.GetWarehouses().FirstOrDefault(w => w.Id == id);
                 if (foundWarehouse is null)
                 {
                     throw new Exception();
@@ -132,7 +114,7 @@ namespace Exercice_4_MVC.Controllers
         public ActionResult Delete(int id)
         {
             // Search throught warehouses list the target warehouse by id
-            var foundWarehouse = WarehouseController.Warehouses.FirstOrDefault(w => w.Id == id);
+            var foundWarehouse = warehouseService.GetWarehouses().FirstOrDefault(w => w.Id == id);
 
             return View(foundWarehouse);
         }
@@ -145,10 +127,10 @@ namespace Exercice_4_MVC.Controllers
             try
             {
                 // Search throught warehouses list the target warehouse by id
-                var foundWarehouse = WarehouseController.Warehouses.FirstOrDefault(w => w.Id == id);
+                var foundWarehouse = warehouseService.GetWarehouses().FirstOrDefault(w => w.Id == id);
                 if(foundWarehouse != null)
                 {
-                    WarehouseController.Warehouses.Remove(foundWarehouse);
+                    warehouseService.Remove(foundWarehouse);
                 }
                 return RedirectToAction(nameof(Index));
             }

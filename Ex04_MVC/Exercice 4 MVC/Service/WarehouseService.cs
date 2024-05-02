@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+﻿using Exercice_4_MVC.Data;
+using Exercice_4_MVC.Models;
+using Microsoft.AspNetCore.Components.Forms;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -6,23 +8,54 @@ namespace Exercice_4_MVC.Service
 {
     public class WarehouseService
     {
-        public string GenerateCode()
+
+        private static DbContext dbContext = new DbContext();
+
+
+        public List<Warehouse> GetWarehouses()
         {
-            // Générer une chaîne aléatoire de 8 caractères
-            string randomString = GenerateRandomString(8);
-
-            var generatedHash = GenerateHash(randomString);
-
-            return generatedHash.Substring(0, 8);
-            
+            return dbContext.Warehouses;
         }
 
-        public bool VerifyCode(string inputText, string hash)
+        public void Add(Warehouse newWarehouse)
         {
-            var generatedHash = GenerateHash(inputText);
+            dbContext.Warehouses.Add(newWarehouse);
+        }
 
-            // Comparer le hash généré avec le hash fourni
-            return generatedHash.Equals(hash, StringComparison.OrdinalIgnoreCase);
+        public void Remove(Warehouse newWarehouse)
+        {
+            dbContext.Warehouses.Remove(newWarehouse);
+        }
+
+        public string GenerateCode(int warehouseId)
+        {
+            // Générer une chaîne aléatoire de 8 caractères
+            string code = GenerateRandomString(8);
+
+            var hashedCode = GenerateHash(code);
+
+            var currentWarehouse = dbContext.Warehouses.SingleOrDefault(w => w.Id == warehouseId);
+            if (currentWarehouse != null)
+                throw new Exception("Warehouse inconnu");
+            currentWarehouse!.CodeAccesMD5.Add(hashedCode);
+
+            return hashedCode;
+
+        }
+
+        public bool VerifyCode(int warehouseId,string inputText)
+        {
+            var userInputCode = GenerateHash(inputText);
+
+            var currentWarehouse = dbContext.Warehouses.SingleOrDefault(w => w.Id == warehouseId);
+            foreach (var code in currentWarehouse.CodeAccesMD5)
+            {
+                // Comparer le hash stocké avec le hash fourni
+                if (code == userInputCode)
+                    return true;
+            }
+           
+            return false;
         }
 
         private string GenerateHash(string inputText)
