@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+	<style>
+	pre {
+		page-break-inside: avoid;
+		font-size: 9px;
+	}
+	</style>
+	<title>Apprendre le C# - MVC</title>
+</head>
+
+
+<body>
+    <header>
+        <h1>Apprendre le C# - MVC</h1>
+    </header>
+    <h2>
+        Introduction rapide</h3>
+
+        <p>
+            Le MVC est un pattern permettant de séparer les responsabilités dans une application permettant la persistances de données et leur gestion via une interface utilisateur.
+        </p>
+        <p>
+            Séparer ces responsabilités en plusieurs couches permet une meilleure compréhension pour un développeur qui arrive ultérieurement sur le projet. Cette lisibilité optimisé et cette testabilité permet d'avoir au final un projet plus maintenable.
+        </p>
+        <p>Pour ce chapitre, nous allons réparer et faire évoluer une application de gestion d'entrepôt (appelé WMS).</p>
+
+        <h2>Exercices</h2>
+        <p>Récupérer le projet de départ et commencez les exercices.</p>
+
+        <h3>Exercice A : Réparer la page qui liste les entrepôts</h3>
+
+        <p>
+            Démarrer le projet, accèder à /Warehouse (dans mon cas "https://localhost:7179/Warehouse").
+            <b>Vous devez tomber sur une page d'erreur</b>. Réparez cette page.
+        </p>
+
+        <h4>Résultat attendu</h4>
+        <div><img src="./readme_ressources/warehouse_page.png" alt=""></div>
+		<div style="page-break-before:always"></div>
+        <h3>Exercice B : Afficher les valeurs initiales sur la page de modification</h3>
+
+        <p>
+            Sur la page "/Warehouse", cliquez sur le lien "edit" d'un des entrepôt.
+            A part l'Id, les champs sont vides car les données de l'entrepôt ne sont pas passés à la vue (seul l'id est passé via le lien).
+            Faîtes en sorte que les données de l'entrepôt selectionné s'affichent dans les champs de la page d'édition.
+        </p>
+
+        <h3>Exercice C : Ajouter un lien dans le menu du haut, pointant vers la page de liste des entrepôts</h3>
+
+        <p>
+            Ce lien devra apparaître dans le menu, peut importe la page sur laquel on se trouve. Voici la ligne de code Razor à rajouter (elle sera expliqué plus tard dans la partie Razor du cours) :
+            <br><code>
+                &lt;li class=&quot;nav-item&quot;&gt;
+                &lt;a class=&quot;nav-link text-dark&quot; asp-area=&quot;&quot; asp-controller=&quot;Warehouse&quot; asp-action=&quot;Index&quot;&gt;Warehouse&lt;/a&gt;
+                &lt;/li&gt;
+            </code>
+        </p>
+
+        <H4>Résultat attendu</H4>
+        <p>Comme dans les 2 captures d'écran ci-dessous, vous devez avoir le nouvel élement dans le menu peut-importe la page où vous vous trouvez.</p>
+        <div class="col-2">
+            <div><img src="./readme_ressources/warehouse_page_avec_warehouse_menu.png" alt=""></div>
+            <div><img src="./readme_ressources/detail_avec_warehouse_menu.png" alt=""></div>
+        </div>
+
+
+        <h4>Exercice D : Créer une page d'ajout d'entrepôt</h4>
+        <p>Vous remarquerez qu'il serait dommage de copier le formulaire présent dans Edit.chtml pour le coller dans un fichier Create.cshtml</p>
+        <p>Copiez le formulaire (<code>&lt;form&gt; ... &lt;/form&gt;</code>) d'édition dans un fichier _WarehouseForm.cshtml dans le dossier Views/Shared/</p>
+        <p>Dans Edit.cshtml, supprimez le formulaire et appellez _WarehouseForm.cshtml de cette façon : <code> @{ await Html.RenderPartialAsync("_WarehouseForm", Model); }</code></p>
+        <p>Créez un fichier Create.cshtml qui appelle également le formulaire</p>
+        <p>Utilisez ViewData (comme fait pour le titre de la page) pour changer la méthode de controller appelé dans <code>asp-action</code> dans le formulaire pour ne pas appeler la méthode d'édition dans le scénario de création.</p>
+
+	<div style="page-break-before:always"></div>
+        <h4>Exercice E : Permettre la création d'un code d'accès avec TempData</h4>
+		<i>Le warehouse est protégé par un code, on peut en créer un mais il n'est distribué qu'une seule fois. 
+			Ce code n'est pas sauvegardé. A des fin de sécurité seul le md5 sur code d'accès est persisté.</i>
+		<li><strong>Contraintes:</strong> Vous devez utiliser TempData et avoir deux actions dans WarehouseController</li>
+		<li>Lire le code présent dans WareHouseService.cs</li>
+		<li>Dans WarehouseController, ajouter deux nouvelles Actions GenerateCode et ViewCode</li>
+		<li>Sur la page d'édition d'un warehouse, ajouter un button permettant de générer un code d'accès pour le warehouse courant.</li>
+        <li>Faite en sorte que l'ulisateur puisse recevoir son code après l'avoir générer.</li>
+
+
+
+		<h4>Exercice F : Permettre l'ouverture du code à partir du code d'accès</h4>
+		<p>Ajouter un formulaire qui permet d'ouvrir le code si celui est correct.</p>
+		<li><strong>Contraintes:</strong> Vous devez utiliser ViewBag pour la réponse (Code OK / Code KO)</li>
+		<h4>Soumettre votre solution</h4>
+		<p>Déposez ces exercices sur votre dépôt git créé à cet effet.</p>
+</body>
+
+</html>
