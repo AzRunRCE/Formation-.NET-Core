@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <title>Apprendre le C# - WPF</title>
+</head>
+<header>
+    <h2>Apprendre le C# - WPF</h2>
+</header>
+
+<body>
+    <h3>Introduction rapide</h3><br>
+
+    <p>WPF (<b>W</b>indows <b>P</b>resentation <b>F</b>oundation) est une bibliothèque de développement d'applications graphiques sous Windows, 
+        incluse dans le framework .NET de Microsoft. Elle est utilisée pour créer des applications de bureau riches en fonctionnalités et en interfaces utilisateur.
+        <br><br>Principales caractéristiques :
+        <ul>
+            <li>Utilisation du modèle MVVM (Model-View-ViewModel) pour séparer clairement la logique de l'application de son interface utilisateur.</li>
+            <li>L'interface utilisateur est définie en XAML, un langage de balisage qui permet de décrire les interfaces de manière déclarative.</li>
+            <li>Utilisation de Data Binding (fonctionnalités de liaison de données) pour permettre aux éléments de l'interface utilisateur de se lier facilement aux données de l'application.</li>
+            <li>Prend en charge les animations et les graphiques vectoriels, ainsi que les graphismes 3D, permettant de créer des interfaces utilisateur dynamiques et interactives.</li>
+        </ul>
+    </p>
+
+    <h3>Exercices</h3><br>
+
+    <p>Aperçu de l'application à développer :
+        <br><img src="AccueilImage.png">
+    </p>
+
+    <p>Dans votre dépot git créez un nouveau dossier. Depuis Microsoft Visual Studio créez un nouveau projet de type "Application WPF (.NET Framework). 
+    <br>Ciblé la version .NET Framework 4.8.</p>
+
+    <h4>Exercice 1 : Prise en main de WPF</h4><br>
+
+    <p>Suivez la playlist suivante pour apprendre les bases du WPF : <a href="https://www.youtube.com/watch?v=t9ivUosw_iI&list=PLih2KERbY1HHOOJ2C6FOrVXIwg4AZ-hk1" target="_blank">Regarder la vidéo sur YouTube</a>
+    </p>
+    <p>En parallèle, prenez en main l'outil en créeant une application simple qui respecte les éléments ci-dessous :
+        <ul>
+            <li>Utilisation du modèle MVVM (Model-View-ViewModel)</li>
+            <li>Utilisation du Data Binding</li>
+            <li>Manipuler simplement les composants de bases : Grid, StackPanel, TextBlock, TextBox, Button, ListView, Expander, et ScrollViewer </li>
+        </ul>
+    </p>
+
+    <h4>Exercice 2 : Création d'une ListView</h4><br>
+
+    <p>Maintenant que vous avez les bases en WPF et l'architecture en place. Commençons a créer l'IHM de l'application Garage. L'application devra être responsive.
+        <ol>
+            <li>Créez un dossier MVVM. Dans celui-ci créer une classe qui hérite de INotifyPropertyChanged et implémenter l'interface. Vos Models, votre ViewModel et vos UserControl.cs pourront en hériter pour ne pas réimplémenter INotifyPropertyChanged.</li>
+            <li>Créez maintenant dans ce même dossier une classe qui hérite de ICommand et implémenter l'interface. A l'avenir, quand vous voudrez exécuter une méthode à partir d'un élément de l'XAML, vous utiliserez la propriété "Command".</li>
+            <li>Adapter vos models à l'utilisation réel de votre interface graphique. Utiliser la librairie AutoMapper, et implémenter des CreateMap pour passer d'un model à un autre.</li>
+            <li>Développer une ListView qui affiche toutes les informations de chaque véhicule. Les options seront séparés par des virgule dans une même colonne.</li>
+            <li>Stylisé votre ListView et déplacer votre style dans un dossier "Styles". Manipuler les Triggers pour stylisé le style de l'item actuellement sélectionné.</li>   
+        </ol>
+    </p>
+    
+    <p>Essayé de reproduire un résultat similaire :
+        <br><img src="Animations/ListViewAnimation.gif">
+    </p>
+
+    <h4>Exercice 3 : Création du volet</h4><br>
+
+    <p> 
+        <ol>
+            <li>Créer un Expander à droite de la fenêtre. Placez à l'intérieur toutes les informations du véhicule sélectionné. 
+                Le cylindre et le prix du moteur doivent être dans des TextBox. Le type du moteur et les options seront dans des ListView.</li>
+            <li>Ajouter un bouton "Appliquer". Au click de celui-ci le véhicule doit être mis à jour et persisté dans la BDD. (Les options seront gérer plus tard). Mettez également la liste à jour.</li>
+            <li>Ajouter a votre Core métier des DTO approprié à chaque opération (add, update, ou remove). Pour la modification de votre véhicule, créer une instance DTO update et passez la au service.</li>
+            <li>Une fois cela fonctionnelle, déplacé le XAML du volet dans un nouveau UserControl. Celui-ci sera réutilisez plus tard pour la création d'un véhicule.
+                La logique derrière devra maintenant être géré par le usercontrol.cs (Pas de ViewModel pour les User Control). 
+                Les paramètres nécessaires seront données par le main via des "DependencyProperty". Créez un eventHandler dans le UserControl pour retourner le véhicule modifié. C'est le Main ViewModel qui s'occupe de modifier et persister le véhicule.</li>
+        </ol>
+    </p>
+
+    <p>Essayé de reproduire un résultat similaire :
+        <br><img src="Animations/VoletAnimation.gif">
+    </p>
+
+    <h4>Exercice 4 : Création de la window pour gérer les options</h4><br>
+
+    <p> 
+        <ol>
+            <li>Créer un button avec une image "+". Au click de celui-ci créer une nouvelle window et afficher là avec la méthode ShowDialog().</li>
+            <li>Créer une ListView pour permettre à l'utilisateur de sélectionné une ou plusieurs options, parmi toutes celles disponibles et que le véhicule ne possède pas déjà.</li>
+            <li>Ajouter un button "Ajouter". Au click de celui-ci la fenêtre ce ferme. Récupérer le résultat du ShowDialog() et récupérer les options sélectionné dans le parent.</li>
+            <li>Ajouter un ContextMenu à votre ListView avec un MenuItem pour supprimer la ou les options sélectionné.</li>
+        </ol>
+    </p>
+
+    <p>Essayé de reproduire un résultat similaire :
+        <br><img src="Animations/CreateWindowAnimation.gif">
+    </p>
+
+    <h4>Exercice 5 : Création du véhicule</h4><br>
+
+    <p> 
+        <ol>
+            <li>Comme pour l'exercice précédent, ajouter un button avec une image "+" au dessus de la ListView des véhicule, et créez une nouvelle Window et afficher là avec ShowDialog().</li>
+            <li>A l'intérieur d'un ScrollViewer et d'un StackPanel, créez une ListView afin que l'utilisateur choississe parmi les véhicule disponibles, et réutilisez le UserControl du volet. Le véhicule à sélectionné sera celui de la ListView de la Window.</li>
+            <li>Ajouter un ContextMenu à votre ListView principale qui liste les véhicules et un MenuItem pour supprimer le véhicule sélectionné.</li>
+        </ol>
+    </p>
+
+    <p>Essayé de reproduire un résultat similaire :
+        <br><img src="Animations/ManageVehiculeAnimation.gif">
+    </p>
+
+    <h4>Exercice 6 : Clean du projet</h4><br>
+
+    <p> 
+        <ol>
+            <li>Vérifiez que chacune de vos fenêtre est responsive et ne permet pas de ne pas visualisé un élément. Utilisez des ScrollViewer ou définissez de MinHeight, et MinWidth ou encore interdissez la resize.</li>
+            <li>Vérifiez que vous respectez les principe d'injections inversés ou faites les modifications nécessaires.</li>
+            <li>Renseignez vous sur la librairie Autofac et utilisez la pour gérer automatiquement vos dépendances à la construction des éléments dans votre Main.</li>
+        </ol>
+    </p>
+</body>
+
+</html>
