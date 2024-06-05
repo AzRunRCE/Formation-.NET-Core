@@ -6,8 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercice 5 MVC_Attribut", "Exercice 4 MVC\Exercice 5 MVC_Attribut.csproj", "{A6934C55-DB7A-4C8E-8DF3-F84A447472DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{841FD842-60B5-49C6-9879-B12256392A60}"
+	ProjectSection(SolutionItems) = preProject
+		Ex05 MVC_Attribut.html = Ex05 MVC_Attribut.html
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "BO\BO.csproj", "{23397C1D-7C95-4C3E-9258-5FE0629040EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BO", "BO\BO.csproj", "{23397C1D-7C95-4C3E-9258-5FE0629040EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

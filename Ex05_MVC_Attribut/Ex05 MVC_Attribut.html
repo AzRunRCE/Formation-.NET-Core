@@ -29,25 +29,29 @@
         <h3>Exercice A : Implémenter une page qui permet de créer une commande dans un entrepot.</h3>
 		<p>
            Un Warehouse possède plusieurs commandes ainsi que plusieurs articles avec un stock associé.
-		   Une commande posséde au moins articles commandés, elle détenu par un client.
+		   Une commande posséde au moins articles commandés, elle détenue par un client.
         </p>
-      <p>
-		  Dans ce projet, vous allez ajouter des attributs de validation courants au modèle Order pour garantir l'intégrité et 
-		  la validité des données saisies lors de la création d'une commande. 
-		  Vous allez utiliser des annotations de données (data annotations) pour effectuer ces validations.
-	  </p>
-
         <p>
-		Le modèle Order doit inclure les validations suivantes:
-
-		CustomerName : Le nom du client doit être obligatoire et avoir une longueur maximale de 100 caractères.
-		Email : L'adresse e-mail doit être obligatoire et suivre le format d'une adresse e-mail valide.
-		ShippingAddress : L'adresse de livraison doit être obligatoire et avoir une longueur maximale de 200 caractères.
-		OrderDate : La date de commande doit être obligatoire et représenter une date valide.
-		TotalAmount : Le montant total de la commande doit être obligatoire et supérieur à zéro.
-		OrderStatus : Le statut de la commande doit être obligatoire et correspondre à une des valeurs prédéfinies.
-		OrderDetails : Chaque commande doit contenir au moins un détail de commande avec une quantité valide.
+			Voici les contraintes fonctionnelles:
 		</p>
+		<ul>
+			<li>Le nom du client doit être obligatoire et avoir une longueur maximale de 100 caractères.</li>
+			<li>L'adresse e-mail doit être obligatoire et suivre le format d'une adresse e-mail valide.</li>
+			<li>L'adresse de livraison doit être obligatoire et avoir une longueur maximale de 200 caractères.</li>
+			<li>La date de commande doit être obligatoire et représenter une date valide.</li>
+			<li>Le montant total de la commande doit être obligatoire et supérieur à zéro.</li>
+			<li>Le statut de la commande doit être obligatoire et correspondre à une des valeurs prédéfinies.</li>
+			<li>Chaque commande doit contenir au moins un détail de commande avec une quantité valide.</li>
+		</ul> 
+		
+		 <p>
+		  Dans ce projet, ajoutez des <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-8.0#built-in-attributes">(attributs de validation)</a> au modèle Order pour garantir l'intégrité et 
+		  la validité des données saisies lors de la création d'une commande. 
+		 </p>
+		<ul>
+			<li>Afin de séparer les couches, implémentez un viewModel <strong> OrderViewModel</strong>.</li>
+		</ul>
+		
 </body>
 
 </html>
