@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <title>Injection de Dépendances en C#</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Injection de Dépendances en .NET</h1>
+
+    <h2>Contexte</h2>
+    <p>L'injection de dépendances (Dependency Injection, DI) est un principe fondamental en programmation orientée
+        objet, surtout dans le développement d'applications évolutives et maintenables. Elle permet de déléguer la
+        responsabilité de la création des instances des classes à un conteneur d'injection de dépendances, ce qui
+        facilite le test unitaire et réduit le couplage entre les composants.</p>
+    <p>Dans ce contexte, nous allons démontrer l'utilisation de l'injection de dépendances dans deux environnements :
+    </p>
+    <ol>
+        <li><strong>.NET Framework avec AutoFac</strong></li>
+        <li><strong>.NET Core avec le conteneur d'injection de dépendances intégré</strong></li>
+    </ol>
+
+    <h2>Partie 1 : Injection de Dépendances en .NET Framework avec AutoFac</h2>
+
+    <h3>Installation</h3>
+    <ol>
+        <li>Créez un projet de console en .NET Framework.</li>
+        <li>Ajoutez le package NuGet AutoFac :
+            <pre><code>Install-Package Autofac
+Install-Package Autofac.Extensions.DependencyInjection</code></pre>
+        </li>
+    </ol>
+
+    <h3>Exemple de Code</h3>
+    <pre><code>using System;
+using Autofac;
+
+namespace GarageManagement
+{
+    public interface IVehiculeRepository
+    {
+        void AddVehicule(string Vehicule);
+    }
+
+    public class SQLVehiculeRepository : IVehiculeRepository
+    {
+        public void AddVehicule(string Vehicule)
+        {
+            Console.WriteLine($"Vehicule added: {Vehicule}");
+        }
+    }
+
+    public interface IVehiculeService
+    {
+        void RegisterVehicule(string Vehicule);
+    }
+
+    public class VehiculeService : IVehiculeService
+    {
+        private readonly IVehiculeRepository _VehiculeRepository;
+
+        public VehiculeService(IVehiculeRepository VehiculeRepository)
+        {
+            _VehiculeRepository = VehiculeRepository;
+        }
+
+        public void RegisterVehicule(string Vehicule)
+        {
+            _VehiculeRepository.AddVehicule(Vehicule);
+            Console.WriteLine($"Vehicule registered: {Vehicule}");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterType&lt;SQLVehiculeRepository&gt;().As&lt;IVehiculeRepository&gt;();
+            builder.RegisterType&lt;VehiculeService&gt;().As&lt;IVehiculeService&gt;();
+            var container = builder.Build();
+
+            var VehiculeService = container.Resolve&lt;IVehiculeService&gt;();
+            VehiculeService.RegisterVehicule("Toyota Corolla");
+
+            Console.ReadLine();
+        }
+    }
+}</code></pre>
+
+    <h3>Explications</h3>
+    <ol>
+        <li><strong>Interface <code>IVehiculeRepository</code> et implémentation
+                <code>SQLVehiculeRepository</code></strong> : Cette interface représente le dépôt de véhicules, et
+            <code>SQLVehiculeRepository</code> en est une implémentation concrète.</li>
+        <li><strong>Interface <code>IVehiculeService</code> et implémentation <code>VehiculeService</code></strong> :
+            <code>VehiculeService</code> utilise <code>IVehiculeRepository</code> pour gérer les véhicules.</li>
+        <li><strong>Configuration du conteneur AutoFac</strong> : <code>ContainerBuilder</code> est utilisé pour
+            enregistrer les types. Ici, <code>SQLVehiculeRepository</code> est enregistré comme implémentation de
+            <code>IVehiculeRepository</code>, et <code>VehiculeService</code> est enregistré comme implémentation de
+            <code>IVehiculeService</code>.</li>
+        <li><strong>Résolution de la dépendance</strong> : <code>Resolve&lt;IVehiculeService&gt;()</code> permet de
+            récupérer l'instance de <code>VehiculeService</code> via le conteneur AutoFac.</li>
+        <li><strong>Veuilliez noter que la résolution se fait en cascade.</strong></li>
+    </ol>
+
+    <h2>Partie 2 : Injection de Dépendances en .NET Core</h2>
+
+    <h3>Installation</h3>
+    <ol>
+        <li>Créez un projet de console en .NET Core.</li>
+        <li>Utilisez le conteneur d'injection de dépendances natif.</li>
+    </ol>
+
+    <h3>Exemple de Code</h3>
+    <pre><code>using System;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace GarageManagementWithDotNetCore
+{
+    public interface IVehiculeRepository
+    {
+        void AddVehicule(string Vehicule);
+    }
+
+    public class SQLVehiculeRepository : IVehiculeRepository
+    {
+        public void AddVehicule(string Vehicule)
+        {
+            Console.WriteLine($"Vehicule added: {Vehicule}");
+        }
+    }
+
+    public interface IVehiculeService
+    {
+        void RegisterVehicule(string Vehicule);
+    }
+
+    public class VehiculeService : IVehiculeService
+    {
+        private readonly IVehiculeRepository _VehiculeRepository;
+
+        public VehiculeService(IVehiculeRepository VehiculeRepository)
+        {
+            _VehiculeRepository = VehiculeRepository;
+        }
+
+        public void RegisterVehicule(string Vehicule)
+        {
+            _VehiculeRepository.AddVehicule(Vehicule);
+            Console.WriteLine($"Vehicule registered: {Vehicule}");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton&lt;IVehiculeRepository, SQLVehiculeRepository&gt;()
+                .AddSingleton&lt;IVehiculeService, VehiculeService&gt;()
+                .BuildServiceProvider();
+
+            var VehiculeService = serviceProvider.GetService&lt;IVehiculeService&gt;();
+            VehiculeService.RegisterVehicule("Toyota Corolla");
+
+            Console.ReadLine();
+        }
+    }
+}</code></pre>
+
+    <h3>Explications</h3>
+    <ol>
+        <li><strong>Interface <code>IVehiculeRepository</code> et implémentation
+                <code>SQLVehiculeRepository</code></strong> : Identiques à celles du premier exemple.</li>
+        <li><strong>Interface <code>IVehiculeService</code> et implémentation <code>VehiculeService</code></strong> :
+            <code>VehiculeService</code> utilise <code>IVehiculeRepository</code> pour gérer les véhicules.</li>
+        <li><strong>Configuration du conteneur d'injection de dépendances natif</strong> :
+            <code>ServiceCollection</code> est utilisé pour enregistrer les types.
+            <code>AddSingleton&lt;IVehiculeRepository, VehiculeRepository&gt;()</code> et
+            <code>AddSingleton&lt;IVehiculeService, VehiculeService&gt;()</code> enregistrent les services respectifs.
+        </li>
+        <li><strong>Résolution de la dépendance</strong> : <code>GetService&lt;IVehiculeService&gt;()</code> permet de
+            récupérer l'instance de <code>VehiculeService</code> via le conteneur d'injection de dépendances natif.</li>
+    </ol>
+
+    <h2>Exercices</h2>
+    <ol>
+        <li><strong>Exercice 1</strong> : Ajoutez un nouveau service <code>MaintenanceService</code> implémentant une
+            interface <code>IMaintenanceService</code> pour gérer l'entretien des véhicules. Modifiez la configuration
+            du conteneur pour enregistrer et utiliser ce service.</li>
+        <li><strong>Exercice 2</strong> : Créez une interface <code>INotificationService</code> avec une méthode
+            <code>Notify(string notification)</code> et implémentez-la dans une classe <code>NotificationService</code>
+            qui utilise <code>IVehiculeService</code> pour envoyer une notification après l'enregistrement d'un
+            véhicule. Enregistrez les services et résolvez <code>INotificationService</code> pour envoyer une
+            notification.</li>
+        <li><strong>Exercice 3</strong> : Implémentez l'injection de dépendances avec un cycle de vie transitoire
+            (<code>Transient</code>) pour un service <code>LoggingService</code> et démontrez son utilisation en
+            affichant un message de log à chaque appel.</li>
+        <li><strong>Exercice 4</strong> : Intégrez l'injection des dépendances à votre projet fil rouge.</li>
+
+    </ol>
+
+    <p>En complétant ces exercices, vous renforcerez votre compréhension de l'injection de dépendances et de la
+        configuration des conteneurs en .NET Framework et .NET Core.</p>
+
+    <h3 id="strat-gies-d-enregistrement-des-d-pendances">Stratégies d&#39;Enregistrement des Dépendances</h3>
+    <p>Lors de l&#39;utilisation de l&#39;injection de dépendances (DI) dans .NET, il est essentiel de comprendre les
+        différentes stratégies d&#39;enregistrement des services. Chaque stratégie détermine la durée de vie des
+        instances de service. Voici les principales stratégies utilisées :</p>
+    <ol>
+        <li><strong>Singleton</strong></li>
+        <li><strong>Transient</strong></li>
+        <li><strong>Scoped</strong></li>
+    </ol>
+    <p>Source: <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0">MSDN</a></p>
+    <h4 id="1-singleton">1. Singleton</h4>
+    <h5 id="description">Description</h5>
+    <p>Un service enregistré en tant que singleton est créé une seule fois et partagé tout au long du cycle de vie de
+        l&#39;application. La même instance est utilisée chaque fois que le service est requis.</p>
+    <h5 id="utilisation">Utilisation</h5>
+    <p>La stratégie singleton est idéale pour les services qui doivent conserver l&#39;état tout au long de
+        l&#39;application, comme les services de configuration ou de cache.</p>
+    <h4 id="2-transient">2. Transient</h4>
+    <h5 id="description">Description</h5>
+    <p>Un service enregistré en tant que transient est créé chaque fois qu&#39;il est demandé. Cela signifie qu&#39;une
+        nouvelle instance est fournie à chaque fois que le service est injecté.</p>
+    <h5 id="utilisation">Utilisation</h5>
+    <p>La stratégie transient est utile pour les services stateless ou lorsque chaque instance doit être unique et sans
+        état persistant.</p>
+    <h4 id="3-scoped">3. Scoped</h4>
+    <h5 id="description">Description</h5>
+    <p>Un service enregistré en tant que scoped est créé une fois par portée (scope). En applications web, une nouvelle
+        instance est créée pour chaque (requête HTTP/Scope) et réutilisée dans le cadre de cette requête.</p>
+    <h5 id="utilisation">Utilisation</h5>
+    <p>La stratégie scoped est souvent utilisée dans les applications web pour des services qui doivent être créés une
+        fois par (requête HTTP/Scope), comme les services de gestion des bases de données ou des unités de travail.</p>
+    <h3 id="comparaison-des-strat-gies">Comparaison des Stratégies</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Stratégie</th>
+                <th>Durée de vie</th>
+                <th>Quand l&#39;utiliser</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Singleton</td>
+                <td>Tout au long de l&#39;application</td>
+                <td>Pour des services avec état persistant, configuration, cache</td>
+            </tr>
+            <tr>
+                <td>Transient</td>
+                <td>Par demande/instance</td>
+                <td>Pour des services stateless, instances courtes</td>
+            </tr>
+            <tr>
+                <td>Scoped</td>
+                <td>Par portée (scope)</td>
+                <td>Pour des services liés au cycle de vie de la requête (requête HTTP/Scope)</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="exemples-pratiques">Exemples Pratiques</h3>
+    <h4 id="exemple-1-enregistrement-de-services-en-net-core">Exemple 1 : Enregistrement de Services en .NET Core</h4>
+    <pre><code class="lang-csharp">public void ConfigureServices(IServiceCollection services)
+ {
+     services.<span class="hljs-keyword">AddSingleton&lt;ISingletonService, </span>SingletonService&gt;()<span class="hljs-comment">;</span>
+     services.<span class="hljs-keyword">AddTransient&lt;ITransientService, </span>TransientService&gt;()<span class="hljs-comment">;</span>
+     services.<span class="hljs-keyword">AddScoped&lt;IScopedService, </span><span class="hljs-keyword">ScopedService&gt;();
+ </span>}
+ </code></pre>
+    <h4 id="exemple-2-enregistrement-de-services-avec-autofac">Exemple 2 : Enregistrement de Services avec AutoFac</h4>
+    <pre><code class="lang-csharp"><span class="hljs-keyword">var</span> builder = <span class="hljs-function"><span class="hljs-keyword">new</span> <span class="hljs-title">ContainerBuilder</span>();
+ 
+ <span class="hljs-comment">// Singleton</span>
+ <span class="hljs-title">builder</span>.<span class="hljs-title">RegisterType</span>&lt;<span class="hljs-title">SingletonService</span>&gt;().<span class="hljs-title">As</span>&lt;<span class="hljs-title">ISingletonService</span>&gt;().<span class="hljs-title">SingleInstance</span>();
+ 
+ <span class="hljs-comment">// Transient</span>
+ <span class="hljs-title">builder</span>.<span class="hljs-title">RegisterType</span>&lt;<span class="hljs-title">TransientService</span>&gt;().<span class="hljs-title">As</span>&lt;<span class="hljs-title">ITransientService</span>&gt;().<span class="hljs-title">InstancePerDependency</span>();
+ 
+ <span class="hljs-comment">// Scoped</span>
+ <span class="hljs-title">builder</span>.<span class="hljs-title">RegisterType</span>&lt;<span class="hljs-title">ScopedService</span>&gt;().<span class="hljs-title">As</span>&lt;<span class="hljs-title">IScopedService</span>&gt;().<span class="hljs-title">InstancePerLifetimeScope</span>();
+ 
+ <span class="hljs-title">var</span> <span class="hljs-title">container</span> = <span class="hljs-title">builder</span>.<span class="hljs-title">Build</span>();</span>
+ </code></pre>
+    <h3 id="conclusion">Conclusion</h3>
+    <p>La compréhension et l&#39;utilisation appropriée des stratégies d&#39;enregistrement des dépendances permettent
+        de créer des applications plus performantes, maintenables et évolutives. En choisissant correctement la durée de
+        vie des services, vous pouvez contrôler la gestion de la mémoire, l&#39;accès aux ressources partagées, et
+        garantir que vos services sont utilisés de manière optimale tout au long du cycle de vie de votre application.
+    </p>
+</body>
+
+</html>

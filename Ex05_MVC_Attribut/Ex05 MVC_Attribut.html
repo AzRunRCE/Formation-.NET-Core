@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+	<style>
+	pre {
+		page-break-inside: avoid;
+		font-size: 9px;
+	}
+	</style>
+	<title>Apprendre le C# - ex05 MVC_Attribut</title>
+</head>
+
+
+<body>
+    <header>
+        <h1>Apprendre le C# - ex05 MVC_Attribut</h1>
+    </header>
+    <h2>Introduction rapide</h2>
+        <p>Pour ce chapitre, faire évoluer une application de gestion d'entrepôt (appelé WMS).</p>
+
+        <h2>Exercices</h2>
+        <p>Récupérer le projet de départ et commencez les exercices.</p>
+
+        <h3>Exercice A : Implémenter une page qui permet de créer une commande dans un entrepot.</h3>
+		<p>
+           Un Warehouse possède plusieurs commandes ainsi que plusieurs articles avec un stock associé.
+		   Une commande posséde au moins articles commandés, elle détenue par un client.
+        </p>
+        <p>
+			Voici les contraintes fonctionnelles:
+		</p>
+		<ul>
+			<li>Le nom du client doit être obligatoire et avoir une longueur maximale de 100 caractères.</li>
+			<li>L'adresse e-mail doit être obligatoire et suivre le format d'une adresse e-mail valide.</li>
+			<li>L'adresse de livraison doit être obligatoire et avoir une longueur maximale de 200 caractères.</li>
+			<li>La date de commande doit être obligatoire et représenter une date valide.</li>
+			<li>Le montant total de la commande doit être obligatoire et supérieur à zéro.</li>
+			<li>Le statut de la commande doit être obligatoire et correspondre à une des valeurs prédéfinies.</li>
+			<li>Chaque commande doit contenir au moins un détail de commande avec une quantité valide.</li>
+		</ul> 
+		
+		 <p>
+		  Dans ce projet, ajoutez des <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-8.0#built-in-attributes">(attributs de validation)</a> au modèle Order pour garantir l'intégrité et 
+		  la validité des données saisies lors de la création d'une commande. 
+		 </p>
+		<ul>
+			<li>Afin de séparer les couches, implémentez un viewModel <strong> OrderViewModel</strong>.</li>
+		</ul>
+		
+</body>
+
+</html>
