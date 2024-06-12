@@ -1,0 +1,58 @@
+# Articles
+Id,Name,Description,Price,StockQuantity
+1,Ordinateur portable,Ordinateur portable haute performance,1200.00,50
+2,Smartphone,Smartphone avec écran AMOLED,800.00,100
+3,Tablette,Tablette 10 pouces avec stylet,600.00,30
+4,Moniteur,Moniteur 27 pouces 4K,450.00,20
+5,Clavier,Clavier mécanique,150.00,75
+6,Souris,Souris sans fil,50.00,60
+7,Casque audio,Casque audio à réduction de bruit,200.00,40
+8,Montre connectée,Montre connectée pour fitness,250.00,35
+9,Imprimante,Imprimante tout-en-un,300.00,25
+10,Routeur,Routeur double bande,100.00,15
+
+# Orders
+Id,WarehouseId,CustomerName,Email,ShippingAddress,OrderDate,TotalAmount,OrderStatus
+1,2,Guy Dubois,guy.dubois@example.com,23 rue de Rivoli, Paris,2023-01-01,420.67,Processing
+2,1,Marie Leblanc,marie.leblanc@example.com,12 boulevard Saint-Michel, Lyon,2023-01-16,1056.32,Shipped
+3,2,Pierre Martin,pierre.martin@example.com,5 avenue des Champs-Élysées, Nice,2023-01-31,784.99,Delivered
+4,1,Lucie Dupont,lucie.dupont@example.com,8 rue de la République, Marseille,2023-02-15,1234.45,Cancelled
+5,2,Jean-Paul Roux,jean.paul.roux@example.com,14 rue de la Paix, Toulouse,2023-03-02,1567.89,Returned
+6,1,Claire Moreau,claire.moreau@example.com,6 rue Victor Hugo, Bordeaux,2023-03-17,987.65,Processing
+7,2,Pauline Lefevre,pauline.lefevre@example.com,9 rue de la Liberté, Nantes,2023-04-01,342.78,Shipped
+8,1,Marc Lefevre,marc.lefevre@example.com,20 boulevard Haussmann, Strasbourg,2023-04-16,876.54,Delivered
+9,2,Amélie Bernard,amelie.bernard@example.com,11 rue Nationale, Lille,2023-05-01,1100.22,Cancelled
+10,1,Philippe Lambert,philippe.lambert@example.com,3 rue Jean Moulin, Grenoble,2023-05-16,430.99,Returned
+11,2,Laura Girard,laura.girard@example.com,19 rue de Lyon, Reims,2023-05-31,2100.45,Processing
+12,1,Bruno Richard,bruno.richard@example.com,17 rue de Bretagne, Montpellier,2023-06-15,543.67,Shipped
+13,2,Juliette Petit,juliette.petit@example.com,25 rue de Metz, Dijon,2023-06-30,789.23,Delivered
+14,1,Georges Garcia,georges.garcia@example.com,22 rue de la Gare, Brest,2023-07-15,999.99,Cancelled
+15,2,Isabelle Font, isabelle.font@example.com, 7 rue de Lille, Toulon, 2023-07-30, 1223.45, Returned
+16,1,Adrien Millet, adrien.millet@example.com, 18 rue de la Liberté, Le Havre, 2023-08-14, 1440.67, Processing
+17,2,Corinne Rolland, corinne.rolland@example.com, 16 rue de la Victoire, Saint-Étienne, 2023-08-29, 876.32, Shipped
+18,1,Benoît Dupuis, benoit.dupuis@example.com, 2 rue de la Gare, Clermont-Ferrand, 2023-09-13, 543.78, Delivered
+19,2,Delphine Morin, delphine.morin@example.com, 10 rue de l'Église, Limoges, 2023-09-28, 2010.99, Cancelled
+20,1,Thibault Robert, thibault.robert@example.com, 21 rue de l'École, Amiens, 2023-10-13, 330.45, Returned
+
+# OrderDetails
+Id,OrderId,ArticleId,Quantity,UnitPrice
+1,1,1,2,1200.00
+2,1,2,1,800.00
+3,2,3,3,600.00
+4,2,4,1,450.00
+5,3,5,5,150.00
+6,3,6,2,50.00
+7,4,7,3,200.00
+8,4,8,2,250.00
+9,5,9,1,300.00
+10,5,10,4,100.00
+11,6,1,2,1200.00
+12,6,2,1,800.00
+13,7,3,3,600.00
+14,7,4,1,450.00
+15,8,5,5,150.00
+16,8,6,2,50.00
+17,9,7,3,200.00
+18,9,8,2,250.00
+19,10,9,1,300.00
+20,10,10,4,100.00

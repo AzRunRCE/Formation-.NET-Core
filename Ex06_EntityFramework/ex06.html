@@ -191,67 +191,89 @@ Update-Database</code></pre>
                 }
             }
         }</code></pre>
-    
-    <h3>5. Manipulation des données :</h3>
-    <li>Respecter les bonnes pratiques d'architecture et de programmation.</li>
-    <li>Montez un service pour chaque entités manipulées.</li>
-    <ul>
-        <li>Ajoutez des fonctions dans votre programme pour effectuer les opérations suivantes :
-            <ul>
-                <li>Afficher tous les entrepôts.</li>
-                <li>Ajouter un nouvel article.</li>
-                <li>Mettre à jour la quantité en stock d'un article.</li>
-                <li>Supprimer une commande.</li>
-            </ul>
-        </li>
-    </ul>
-    <p>Exemple pour obtenir tous les articles :</p>
+	<li>Exécutez votre programme.</li>
+     <p>Exemple pour obtenir tous les articles :</p>
     <pre><code>static void DisplayAllArticles()
-        List<Article> GetAllArticles()
+    {
+        using (var context = new ApplicationDbContext())
         {
-            using (var context = new ApplicationDbContext())
+            var articles = context.Articles.ToList();
+            foreach (var article in articles)
             {
-                var articles = context.Articles.ToList();
-                return articles;
+                Console.WriteLine($&quot;ID: {article.Id}, Name: {article.Name}, Price: {article.Price}, NbStock: {article.StockQuantity}&quot;);
             }
-        }</code></pre>
-    
-    <h3>6. Interrogation de la base de données avec LINQ :</h3>
+        }
+    }</code></pre>
+    <h3>5. Manipulation des données :</h3>
+    <li>Respectez les bonnes pratiques d'architecture et de programmation.</li>
+    <li>Implémentez les classes concrétes de ces interfaces.</li>
     <ul>
-        <li>Créez des requêtes LINQ pour obtenir des informations spécifiques, comme :
-            <ul>
-                <li>Tous les articles en dessous d'un certain stock.</li>
-                <li>Toutes les commandes passées par un client spécifique.</li>
-                <li>Le total des ventes pour chaque article.</li>
-            </ul>
-        </li>
-    </ul>
-    <h3>7. Organisez votre code de manière a ce que chaque classe so</h3>
-    <ul>
-        <li>Créez des requêtes LINQ pour obtenir des informations spécifiques, comme :
-            <ul>
-                <li>Tous les articles en dessous d'un certain stock.</li>
-                <li>Toutes les commandes passées par un client spécifique.</li>
-                <li>Le total des ventes pour chaque article.</li>
-            </ul>
-        </li>
+	<pre>
+	
+   <code>
+public interface IWarehouseService
+{
+	// Method to fetch all warehouses
+	List&lt;Warehouse&gt; getAllWarehouses();
+}
+
+
+public interface IArticleService
+{
+	// Method to add new article
+	Article add(Article article);
+
+	// Method to update the stock quantity of an Article
+	Article updateArticleStock(int itemId, int quantity);
+
+	// Method to fetch all Articles that are below given stock
+	List&lt;Article&gt; getArticlesBelowStock(int stock);
+
+	// Method to get total sales for each Article
+	Dictionary&lt;Article, int&gt; getTotalSalesPerArticle();
+}
+
+public interface IOrderService
+{
+	 // Method to add new Order
+	Order add(Order order);
+
+	// Method to delete an order
+	void deleteOrder(int orderId);
+
+	// Method to fetch all orders made by a specific customer
+	List&lt;Order&gt; getAllOrdersByCustomer(int customerId);
+
+	// Method to get average order value
+	double getAverageOrderValue();
+	
+	// Method to get average number article by order
+	double getAverageArticlePerOrder();
+}
+   </code></pre>
+	    <li>En utilisant vos services crées, implémentez un parseur pour insérer les données issu du fichier <a href="./ressources/export.csv">export.csv</a></li>
+		<li>Faites évoluer le schéma de base de données et vos services, pour que les Customer soient dans une table à part.</li>
+		<p>Un Customer peut détenir plusieurs commandes.</p>
+		<p>Une commande appartient à un seul Customer.</p>
+		<li>Faite de même pour les Adresses des Customers.</li>
     </ul>
     <h2>Livrables :</h2>
     <ul>
         <li>Un projet console complet en C# utilisant Entity Framework pour gérer une base de données.</li>
-        <li>Des fonctions démontrant les opérations CRUD et des requêtes LINQ pour interroger la base de données.</li>
+		<li>Un projet de test unitaire prouvant que vos services fonctionnent.</li>
     </ul>
     
     <h2>Évaluation :</h2>
     <p>Vous serez évalué sur votre capacité à :</p>
     <ul>
-        <li>Configurer et utiliser Entity Framework correctement.</li>
+        <li>Architecturer vos applications/projets.</li>
+		<li>Configurer et utiliser Entity Framework correctement.</li>
         <li>Créer et manipuler les entités et le DbContext.</li>
         <li>Effectuer des opérations CRUD de manière efficace.</li>
         <li>Interroger la base de données en utilisant LINQ.</li>
         <li>Respecter les bonnes pratiques de programmation en C# et EF.</li>
     </ul>
     
-    <p>Bonne chance et amusez-vous bien avec Entity Framework !</p>
+    <p>Bonne chance !</p>
 </body>
 </html>
