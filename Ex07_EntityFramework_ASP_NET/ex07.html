@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implémentation d'Entity Framework dans un Projet ASP.NET Core 6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: monospace;
+            color: #c7254e;
+            background: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Implémentation d'Entity Framework dans un Projet ASP.NET Core 6</h1>
+
+    <h2>Objectif</h2>
+    <p>Dans cet exercice, vous allez apprendre à implémenter Entity Framework dans un projet ASP.NET Core 6. Vous allez
+        réutiliser les classes d'entités, les services et les repositories définis précédemment dans le programme
+        console pour les partager à travers un projet ASP.NET Core 6. Vous allez configurer le contexte de la base de
+        données, ajouter des services au conteneur d'injection de dépendances, et interagir avec la base de données via
+        des contrôleurs.</p>
+
+    <h2>Étapes de l'Exercice</h2>
+
+    <h3>1. Création d'un Projet ASP.NET Core 6</h3>
+    <p>Récupérez votre projet <code>Ex05_MVC_Attribut</code> ou créez un nouveau projet ASP.NET Core 6 avec l'option API
+        en utilisant Visual Studio ou la CLI .NET :</p>
+    <pre><code>dotnet new webapi -n WarehouseAPI
+cd WarehouseAPI</code></pre>
+
+    <h3>2. Ajout des Packages Entity Framework Core</h3>
+    <li>Ajoutez les packages nécessaires pour Entity Framework Core et SQL Server
+        <ul>
+            <li><code>Microsoft.EntityFrameworkCore</code> <strong>v6.X.X</strong></li>
+            <li><code>Microsoft.EntityFrameworkCore.SqlServer</code><strong>v6.X.X</strong></li>
+            <li><code>Microsoft.EntityFrameworkCore.Tools</code><strong>v6.X.X</strong></li>
+        </ul>
+    </li>
+
+    <h3>3. Création des Modèles</h3>
+    <p>Copiez les classes d'entités suivantes de votre <code>programme console</code> vers le dossier
+        <code>Models</code> de votre projet ASP.NET Core :</p>
+    <ul>
+        <li>Warehouse</li>
+        <li>Article</li>
+        <li>Order</li>
+        <li>OrderDetail</li>
+    </ul>
+
+
+    <p>Copiez les services suivants de votre <code>programme console</code> vers le dossier <code>Service</code> de
+        votre projet ASP.NET Core :</p>
+    <ul>
+        <li>WarehouseService</li>
+        <li>ArticleService</li>
+        <li>OrderService</li>
+    </ul>
+
+    <h3>4. Configuration du Contexte de la Base de Données</h3>
+    <p>Dans le dossier <code>Data</code>, créez la classe <code>ApplicationDbContext</code> et configurez les relations
+        et les données initiales.</p>
+
+    <h3>5. Configuration du Service dans <code>Program.cs</code></h3>
+    <p>Ouvrez le fichier <code>Program.cs</code> et ajoutez le contexte de la base de données au conteneur de services :
+    </p>
+    <pre><code>
+// Configure the DbContext
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+app.Run();</code></pre>
+    <p>Ajoutez la chaîne de connexion à votre fichier <code>appsettings.json</code> :</p>
+    <pre><code>{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=WarehouseDb;Trusted_Connection=True;MultipleActiveResultSets=true"
+  },
+  ...
+}</code></pre>
+
+    <h3>6. Assurez-vous d'utiliser le pattern Repository au sein des différents services.</h3>
+    <p> Exemple:</p>
+    <pre><code>// Services/IRepository.cs
+public interface IRepository<T> where T : class
+{
+    Task<IEnumerable<T>> GetAll();
+    Task<T> GetById(int id);
+    Task Add(T entity);
+    Task Update(T entity);
+    Task Delete(int id);
+}</code></pre>
+
+    <pre><code>// Services/Repository.cs
+using Microsoft.EntityFrameworkCore;
+using WarehouseAPI.Data;
+
+public class Repository<T> : IRepository<T> where T : class
+{
+    private readonly ApplicationDbContext _context;
+    private readonly DbSet<T> _entities;
+
+    public Repository(ApplicationDbContext context)
+    {
+        _context = context;
+        _entities = _context.Set<T>();
+    }
+
+    public async Task<IEnumerable<T>> GetAll()
+    {
+        return await _entities.ToListAsync();
+    }
+
+    public async Task<T> GetById(int id)
+    {
+        return await _entities.FindAsync(id);
+    }
+
+    public async Task Add(T entity)
+    {
+        await _entities.AddAsync(entity);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task Update(T entity)
+    {
+        _entities.Update(entity);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task Delete(int id)
+    {
+        var entity = await _entities.FindAsync(id);
+        _entities.Remove(entity);
+        await _context.SaveChangesAsync();
+    }
+}</code></pre>
+
+    <h3>7. Implémentation de fonctionnalités</h3>
+    <p>A l'aide de ce que vous avez appris précédemment faites en sorte que nous puissons à travers l'application ASP.NET effectuer les opérations suivantes :</p>
+    <ul>
+        <li>Afficher tous les entrepôts.</li>
+        <li>Afficher tous les clients, trié par <code>montantTotalCommandé</code> décroissant au format suivant:</li>
+<pre><code>
+nomCLient;  Adresse;           nbCommande;  montantTotalCommandé;   montantMoyenParCommande;
+
+Quentin;    2 rue de Rennes;   10;          1 500€                  150€
+Paul;       10 rue de Paris;   2;           500€                    250€
+</code></pre>
+        <li>Ajouter un nouvel article en référence.</li>
+        <li>Mettre à jour la quantité en stock d'un article.</li>
+        <li>Créer une commande, en respectant les contraintes fonctionnelles de l'exerice <code>Ex05_MVC_Attribut</code></li>
+        <li>Editer,Changer le status d'une commande.</li>
+        <li>Afficher toute les commandes.</li>
+        <li>Implementez une pagination performante (Commandes,Clients).</li>
+        <li>Supprimer une commande.</li>
+        <li>Sur nouvelle page Statistiques afficher :</li>
+        <ul>
+            <li>Tous les articles en dessous de 5 elements en stock.</li>
+            <li>Le montant moyen par commande</li>
+            <li>Le nombre moyen d'article par commande</li>
+            <li>L'article le plus vendu</li>
+        </ul>
+        <li>Exposez sous API rest/json les articles à l'adresse <code>localhost:5051/api/articles</code></li>
+    </ul>
+</body>
+
+</html>
