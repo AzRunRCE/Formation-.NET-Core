@@ -40,12 +40,13 @@
     <p>Dans ce contexte, nous allons démontrer l'utilisation de l'injection de dépendances dans deux environnements :
     </p>
     <ol>
-        <li><strong>.NET Framework avec AutoFac.</strong><br>AutoFac était le seul moyen d'obtenir l'injection de dépendance en <strong>.NET/ASP.NET Framework</strong></li>
+        <li><strong>.NET Framework avec AutoFac.</strong><br>AutoFac était le seul moyen d'obtenir l'injection de
+            dépendance en <strong>.NET/ASP.NET Framework</strong></li>
         <li><strong>.NET Core avec le conteneur d'injection de dépendances intégré</strong></li>
     </ol>
 
     <div><img src="./assets/schema_di.png" alt=""></div>
-	
+
     <h2>Partie 1 : Injection de Dépendances en .NET Framework avec AutoFac</h2>
 
     <h3>Installation</h3>
@@ -118,13 +119,16 @@ namespace GarageManagement
     <ol>
         <li><strong>Interface <code>IVehiculeRepository</code> et implémentation
                 <code>SQLVehiculeRepository</code></strong> : Cette interface représente le dépôt de véhicules, et
-            <code>SQLVehiculeRepository</code> en est une implémentation concrète.</li>
+            <code>SQLVehiculeRepository</code> en est une implémentation concrète.
+        </li>
         <li><strong>Interface <code>IVehiculeService</code> et implémentation <code>VehiculeService</code></strong> :
-            <code>VehiculeService</code> utilise <code>IVehiculeRepository</code> pour gérer les véhicules.</li>
+            <code>VehiculeService</code> utilise <code>IVehiculeRepository</code> pour gérer les véhicules.
+        </li>
         <li><strong>Configuration du conteneur AutoFac</strong> : <code>ContainerBuilder</code> est utilisé pour
             enregistrer les types. Ici, <code>SQLVehiculeRepository</code> est enregistré comme implémentation de
             <code>IVehiculeRepository</code>, et <code>VehiculeService</code> est enregistré comme implémentation de
-            <code>IVehiculeService</code>.</li>
+            <code>IVehiculeService</code>.
+        </li>
         <li><strong>Résolution de la dépendance</strong> : <code>Resolve&lt;IVehiculeService&gt;()</code> permet de
             récupérer l'instance de <code>VehiculeService</code> via le conteneur AutoFac.</li>
         <li><strong>Veuilliez noter que la résolution se fait en cascade.</strong></li>
@@ -138,69 +142,104 @@ namespace GarageManagement
         <li>Utilisez le conteneur d'injection de dépendances natif.</li>
     </ol>
 
-    <h3>Exemple de Code</h3>
-    <pre><code>using System;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace GarageManagementWithDotNetCore
-{
-    public interface IVehiculeRepository
+        <h4>IVehiculeRepository.cs</h4>
+        <pre><code>
+    using System;
+    
+    namespace GarageManagementWithDotNetCore
     {
-        void AddVehicule(string Vehicule);
-    }
-
-    public class SQLVehiculeRepository : IVehiculeRepository
-    {
-        public void AddVehicule(string Vehicule)
+        public interface IVehiculeRepository
         {
-            Console.WriteLine($"Vehicule added: {Vehicule}");
+            void AddVehicule(string Vehicule);
         }
     }
+            </code></pre>
 
-    public interface IVehiculeService
+
+        <h4>SQLVehiculeRepository.cs</h4>
+        <pre><code>
+    using System;
+    
+    namespace GarageManagementWithDotNetCore
     {
-        void RegisterVehicule(string Vehicule);
-    }
-
-    public class VehiculeService : IVehiculeService
-    {
-        private readonly IVehiculeRepository _VehiculeRepository;
-
-        public VehiculeService(IVehiculeRepository VehiculeRepository)
+        public class SQLVehiculeRepository : IVehiculeRepository
         {
-            _VehiculeRepository = VehiculeRepository;
-        }
-
-        public void RegisterVehicule(string Vehicule)
-        {
-            _VehiculeRepository.AddVehicule(Vehicule);
-            Console.WriteLine($"Vehicule registered: {Vehicule}");
+            public void AddVehicule(string Vehicule)
+            {
+                Console.WriteLine($"Vehicule added: {Vehicule}");
+            }
         }
     }
+            </code></pre>
 
-    class Program
+        <h4>IVehiculeService.cs</h4>
+        <pre><code>
+    using System;
+    
+    namespace GarageManagementWithDotNetCore
     {
-        static void Main(string[] args)
+        public interface IVehiculeService
         {
-            var serviceProvider = new ServiceCollection()
-                .AddSingleton&lt;IVehiculeRepository, SQLVehiculeRepository&gt;()
-                .AddSingleton&lt;IVehiculeService, VehiculeService&gt;()
-                .BuildServiceProvider();
-
-            var VehiculeService = serviceProvider.GetService&lt;IVehiculeService&gt;();
-            VehiculeService.RegisterVehicule("Toyota Corolla");
-
-            Console.ReadLine();
+            void RegisterVehicule(string Vehicule);
         }
     }
-}</code></pre>
+            </code></pre>
+        <h4>VehiculeService.cs</h4>
+        <pre><code>
+    using System;
+    
+    namespace GarageManagementWithDotNetCore
+    {
+        public class VehiculeService : IVehiculeService
+        {
+            private readonly IVehiculeRepository _VehiculeRepository;
+    
+            public VehiculeService(IVehiculeRepository VehiculeRepository)
+            {
+                _VehiculeRepository = VehiculeRepository;
+            }
+    
+            public void RegisterVehicule(string Vehicule)
+            {
+                _VehiculeRepository.AddVehicule(Vehicule);
+                Console.WriteLine($"Vehicule registered: {Vehicule}");
+            }
+        }
+    }
+            </code></pre>
+
+        <h4>Program.cs</h4>
+        <pre><code>
+    using System;
+    using Microsoft.Extensions.DependencyInjection;
+    
+    namespace GarageManagementWithDotNetCore
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                var serviceProvider = new ServiceCollection()
+                    .AddSingleton&lt;IVehiculeRepository, SQLVehiculeRepository&gt;()
+                    .AddSingleton&lt;IVehiculeService, VehiculeService&gt;()
+                    .BuildServiceProvider();
+    
+                var VehiculeService = serviceProvider.GetService&lt;IVehiculeService&gt;();
+                VehiculeService.RegisterVehicule("Toyota Corolla");
+    
+                Console.ReadLine();
+            }
+        }
+    }
+            </code></pre>
 
     <h3>Explications</h3>
     <ol>
         <li><strong>Interface <code>IVehiculeRepository</code> et implémentation
                 <code>SQLVehiculeRepository</code></strong> : Identiques à celles du premier exemple.</li>
         <li><strong>Interface <code>IVehiculeService</code> et implémentation <code>VehiculeService</code></strong> :
-            <code>VehiculeService</code> utilise <code>IVehiculeRepository</code> pour gérer les véhicules.</li>
+            <code>VehiculeService</code> utilise <code>IVehiculeRepository</code> pour gérer les véhicules.
+        </li>
         <li><strong>Configuration du conteneur d'injection de dépendances natif</strong> :
             <code>ServiceCollection</code> est utilisé pour enregistrer les types.
             <code>AddSingleton&lt;IVehiculeRepository, VehiculeRepository&gt;()</code> et
@@ -219,7 +258,8 @@ namespace GarageManagementWithDotNetCore
             <code>Notify(string notification)</code> et implémentez-la dans une classe <code>NotificationService</code>
             qui utilise <code>IVehiculeService</code> pour envoyer une notification après l'enregistrement d'un
             véhicule. Enregistrez les services et résolvez <code>INotificationService</code> pour envoyer une
-            notification.</li>
+            notification.
+        </li>
         <li><strong>Exercice 3</strong> : Implémentez l'injection de dépendances avec un cycle de vie transitoire
             (<code>Transient</code>) pour un service <code>LoggingService</code> et démontrez son utilisation en
             affichant un message de log à chaque appel.</li>
@@ -239,7 +279,9 @@ namespace GarageManagementWithDotNetCore
         <li><strong>Transient</strong></li>
         <li><strong>Scoped</strong></li>
     </ol>
-    <p>Source: <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0">MSDN</a></p>
+    <p>Source: <a
+            href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-8.0">MSDN</a>
+    </p>
     <h4 id="1-singleton">1. Singleton</h4>
     <h5 id="description">Description</h5>
     <p>Un service enregistré en tant que singleton est créé une seule fois et partagé tout au long du cycle de vie de
