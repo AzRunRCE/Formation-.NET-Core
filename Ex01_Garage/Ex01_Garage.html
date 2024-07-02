@@ -70,11 +70,13 @@ pre {
    	 d4_2.AddOption(new Climatisation());
    	 d4_2.AddOption(new GPS());
    	 d4_2.AddOption(new VitreElectrique());
-   	 garage.AddVoiture(d4_2);   			 
+   	 garage.AddVoiture(d4_2);  
+
+   	 Console.WriteLine(garage); 			 
     }
 }</pre>
 <p>&nbsp;</p>
-<p>Et pour que vous ayez&nbsp;une id&eacute;e de ce que ce programme pourrait vous donner, voici deux screenshots, celui-ci&nbsp;lors du premier lancement de cette classe de test :</p>
+<p>Et pour que vous ayez&nbsp;une id&eacute;e de ce que ce programme pourrait vous donner, voici deux screenshots, celui-ci&nbsp;lors du premier WriteLine de cette classe de test :</p>
 <pre>
 Aucune voiture sauvegardée !
 **************************
@@ -82,24 +84,24 @@ Aucune voiture sauvegardée !
 **************************
 </pre>
 <p>&nbsp;</p>
-<p>Et&nbsp;celui-l&agrave;&nbsp;apr&egrave;s le deuxi&egrave;me lancement (vous constaterez que mon garage n&rsquo;est plus vide &agrave; ce moment-l&agrave;) :</p>
+<p>Et&nbsp;celui-l&agrave;&nbsp;apr&egrave;s le deuxi&egrave;me WriteLine (vous constaterez que mon garage n&rsquo;est plus vide &agrave; ce moment-l&agrave;) :</p>
 <p><pre>
-+ Voiture RENO : Lagouna Noteur ESSENCE 150 Chevaux (23123.0€) [GPS (113.5€), 
-Siége chauffant (562.9€), Vitre electrique (212.35€)] d'une valeur totale de 24011.75 €
++ Voiture RENO : Lagouna Moteur ESSENCE 150 Chevaux (23123.0€) [GPS (113.5€), 
+Siège chauffant (562.9€), Vitre electrique (212.35€)] d'une valeur totale de 24011.75 €
 
-+ Voiture PIGEOT : A330B Moteur ELECTATQUE 1508 W (28457.8€) (Climatisation (347.3€), 
-Barre de toit (29.9€), Sitge chauffant (562.9€)] d'une valeur totale de 29397,100000900082 €
++ Voiture PIGEOT : A330B Moteur ELECTRIQUE 1500 W (28457.8€) (Climatisation (347.3€), 
+Barre de toit (29.9€), Siège chauffant (562.9€)] d'une valeur totale de 29397,100000900082 €
 
-+ Woiture TROEM : 04 Moteur DIESEL 208 Hei (25147.0€) [Barre de toit (29.9€), 
-Climatisation (347.3€), GPS (113.5¢€}] d'une valeur totale de 25637.? €
++ Voiture TROEM : 04 Moteur DIESEL 200 Hdi (25147.0€) [Barre de toit (29.9€), 
+Climatisation (347.3€), GPS (113.5€}] d'une valeur totale de 25637.7 €
 
-+ Voiture REWO : Lagouna Moteur DIESEL 508 Hdi (23123.¢€) [] d'une valeur totale de 23123.0 €
++ Voiture REWO : Lagouna Moteur DIESEL 500 Hdi (23123.0€) [] d'une valeur totale de 23123.0 €
 
-+ Wolture PIGEOT ; A3303 Moteur HYBRIDE ESSEMCE/Electrique (28457.8€) [Vitre electrique (212.35€), 
++ Voiture PIGEOT ; A3303 Moteur HYBRIDE ESSENCE/Electrique (28457.8€) [Vitre electrique (212.35€), 
 Barre de toit (29.9€)] d'une valeur totale de 28699.25 €
 
-+ Voiture TROEM : 04 Moteur ELECTRIQUE 108 KW (25147.0€) [Siége chauffant (562.9€), Barre de toit (29.9€}, 
-Climatisation (347.34), GPS (113.5€), Vitre electrique (212.35€)] d'une
++ Voiture TROEM : 04 Moteur ELECTRIQUE 108 KW (25147.0€) [Siège chauffant (562.9€), Barre de toit (29.9€), 
+Climatisation (347.34€), GPS (113.5€), Vitre electrique (212.35€)] d'une
 </pre></p>
 <p>&nbsp;</p>
 <p>C'est &agrave; vous !</p>
