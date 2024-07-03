@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Entity Framework</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+            color: #c7254e;
+            background: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Le Système de Gestion de Bibliothèque</h1>
+    <h2>TP 1 du Module 8 – Authentification et Autorisation</h2>
+    <p><strong>Durée estimée :</strong> environ 2 heures</p>
+    <h3>Objectif</h3>
+    <p>Ce TP propose la gestion d’un système de bibliothèque simplifié. Seules les fonctionnalités d’authentification et d’autorisation d’accès sont mises en avant dans ce TP. Pour ce TP, vous partirez de la ressource fournie au téléchargement qui propose la base de gestion des livres gérés par cette bibliothèque.</p>
+
+    <h3>Mise en place du projet</h3>
+    <ul>
+        <li>Le projet TPBiblio fourni est un projet de type ASP.NET Core MVC.
+            <ul>
+                <li>Il est associé à une base de comptes de type « comptes individuels ».</li>
+                <li>Il gère le modèle métier Livre.</li>
+                <li>Il propose les vues et le contrôleur de gestion des livres.</li>
+            </ul>
+            <p>Ainsi, il est possible de lister, d’ajouter, de visualiser, d’éditer et de supprimer les livres. Aucune restriction d’accès n’est pour le moment activée.</p>
+        </li>
+        <li>Créez la base de données à partir des migrations définies dans le projet :
+            <ul>
+                <li>À partir de la Console du gestionnaire de package, tapez <code>update-database</code>.</li>
+                <li>Constatez la création de la base de données <code>TpBiblioDB</code>, incluant les tables de gestion des utilisateurs et rôles, ainsi que la table Livres.</li>
+            </ul>
+        </li>
+        <li>Quatre profils d’utilisateur ont accès au système de bibliothèque :
+            <ul>
+                <li>Les visiteurs (utilisateurs anonymes)</li>
+                <li>Les membres (utilisateurs inscrits)</li>
+                <li>Les bibliothécaires</li>
+                <li>Et les administrateurs</li>
+            </ul>
+        </li>
+        <li>Insérez ces 3 rôles dans la table <code>AspNetRoles</code> :
+            <pre>
+<code>
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Name], [NormalizedName], [ConcurrencyStamp])
+VALUES (N'1', N'administrator', N'ADMINISTRATOR', NULL);
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Name], [NormalizedName], [ConcurrencyStamp])
+VALUES (N'2', N'bibliothecaire', N'BIBLIOTHECAIRE', NULL);
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Name], [NormalizedName], [ConcurrencyStamp])
+VALUES (N'3', N'membre', N'MEMBRE', NULL);
+</code>
+            </pre>
+        </li>
+        <li>Insérez ces quelques utilisateurs dans la table <code>AspNetUsers</code> :
+            <pre>
+<code>
+INSERT INTO [dbo].[AspNetUsers] ([Id], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [PasswordHash], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount])
+VALUES (N'09917878-d799-44db-86fe-1136e15f7c63', N'jade@hotmail.fr', N'JADE@hotmail.fr', N'jade@hotmail.fr', N'JADE@hotmail.fr', 1, N'AQAAAAEAACcQAAAAEBz0npGNkb4Pq1UIlU7qLs1KXkbSP2fl6s8cZTkFZrrlxRXkjCgIcFN2xgjl+gWYnQ==', N'64SFO66KTJQIFBFXZKJSIE2TENREF3AX', N'2a033752-8e70-40da-8021-82a53059da7c', NULL, 0, 0, NULL, 1, 0);
+INSERT INTO [dbo].[AspNetUsers] ([Id], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [PasswordHash], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount])
+VALUES (N'14f006af-0a51-4aa7-bb3f-3c8fa1fc6e8d', N'samuel@hotmail.fr', N'SAMUEL@hotmail.fr', N'samuel@hotmail.fr', N'SAMUEL@hotmail.fr', 1, N'AQAAAAEAACcQAAAAEDWJTu+nLK/XGq4S6pdDsAwkXOlj0/kHDn15QW5bkXvjrD1uz4+6IOMlMoAJp2i3QA==', N'4HWPE4Y5TIX6YMJVY2N5GF57LJ57XQTN', N'860bc712-0b32-4670-a271-03bc5e0a09c8', NULL, 0, 0, NULL, 1, 0);
+INSERT INTO [dbo].[AspNetUsers] ([Id], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [PasswordHash], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount])
+VALUES (N'81fe7625-a952-452b-9043-9b201a5e8b44', N'tom@hotmail.fr', N'TOM@hotmail.fr', N'tom@hotmail.fr', N'TOM@hotmail.fr', 1, N'AQAAAAEAACcQAAAAEJXFszJa80MBmGZ47KLJKZqCv1RZqaGC+lCQYlAJaZUwlALOLV3kEuN2yICunrmvQg==', N'GQCVDT22ZEYVXET3XNN6WVKXG5FXNFNM', N'fcaf9f90-993c-437f-af43-651c48fb317a', NULL, 0, 0, NULL, 1, 0);
+INSERT INTO [dbo].[AspNetUsers] ([Id], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [PasswordHash], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount])
+VALUES (N'948cfa5e-df31-41ed-a14d-69785c3934bd', N'felix@hotmail.fr', N'FELIX@hotmail.fr', N'felix@hotmail.fr', N'FELIX@hotmail.fr', 1, N'AQAAAAEAACcQAAAAEEihf/iK431W8tiyVvq0iYjAbnAS/k8DVhjnrOeEabzpdZZSgzoOM9zC59953mPcXA==', N'F4PKWJTC4VA7IG5Q76BCCJQ5YU42WDLH', N'49cd59a5-3024-42cf-88f9-e821aa6604f7', NULL, 0, 0, NULL, 1, 0);
+</code>
+            </pre>
+        </li>
+        <li>Associez ces utilisateurs à leur rôle en insérant ces enregistrements dans la table <code>AspNetUserRoles</code> :
+            <pre>
+<code>
+INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'09917878-d799-44db-86fe-1136e15f7c63', N'3');
+INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'14f006af-0a51-4aa7-bb3f-3c8fa1fc6e8d', N'2');
+INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'81fe7625-a952-452b-9043-9b201a5e8b44', N'1');
+INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'948cfa5e-df31-41ed-a14d-69785c3934bd', N'3');
+</code>
+            </pre>
+            <p>Ainsi Tom est l’administrateur du système, Samuel en est le bibliothécaire et Félix, Jade sont deux membres du système. Tous ces utilisateurs ont le même mot de passe <code>Pa$$w0rd</code>.</p>
+        </li>
+        <li>Les livres gérés par ce système sont associés à l’un des statuts suivants définis dans l’énumération <code>LivreStatus</code> :
+            <ul>
+                <li><strong>Disponible :</strong> le livre est disponible pour emprunt.</li>
+                <li><strong>Emprunté :</strong> le livre a été emprunté par un membre.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Énoncé</h3>
+    <p>Mettez en place l’authentification et l’autorisation de telle sorte que les règles suivantes soient respectées :</p>
+    <ul>
+        <li>Les visiteurs anonymes
+            <ul>
+                <li>Accèdent aux pages <code>home</code> et <code>privacy</code>.</li>
+                <li>Ils peuvent également s'inscrire et s'authentifier.</li>
+                <li>Mais n’accèdent pas à la page <code>Bibliothèque</code>.</li>
+            </ul>
+        </li>
+        <li>Les membres inscrits accèdent à la page <code>Bibliothèque</code>
+            <ul>
+                <li>Ils visualisent tous les livres disponibles et tous les livres dont ils sont responsables.</li>
+                <li>Ils peuvent ajouter un livre. Ils en deviennent responsables.</li>
+                <li>Ils peuvent modifier leurs livres soumis.</li>
+                <li>Ils peuvent visualiser le détail d'un livre disponible de n'importe quel membre, mais ne peuvent pas le modifier.</li>
+                <li>Ils peuvent supprimer les livres dont ils sont responsables.</li>
+            </ul>
+        </li>
+        <li>Les bibliothécaires
+            <ul>
+                <li>Ils visualisent les livres soumis de tous les membres.</li>
+                <li>Ils peuvent visualiser le détail d'un livre.</li>
+                <li>À partir de l'écran détail, ils marquent les livres comme disponibles ou empruntés.</li>
+                <li>Ils peuvent créer un nouveau livre. Ils en deviennent responsables.</li>
+                <li>Ils peuvent modifier et supprimer leurs livres.</li>
+            </ul>
+        </li>
+        <li>L’administrateur
+            <ul>
+                <li>Ils visualisent le détail de n'importe quel livre quel que soit le statut.</li>
+                <li>Ils suppriment les livres.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>Modifier le comportement de la fonctionnalité <code>Register</code> de telle sorte que tout utilisateur qui crée son compte à partir du site :</p>
+    <ul>
+        <li>Puisse saisir son nom en plus de l'email et du mot de passe.</li>
+        <li>Soit associé au rôle « membre ».</li>
+    </ul>
+
+    <h3>Proposition de solution</h3>
+    <p>Une proposition de solution pour ce TP est placée dans les éléments en téléchargement liés à ce module.</p>
+</body>
+</html>
