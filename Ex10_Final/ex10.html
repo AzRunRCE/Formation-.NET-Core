@@ -93,6 +93,9 @@
             le système doit calculer une durée livraison. (aléatoire entre 0 et 120minutes).
             Ceci va nous être utile pour la suite.
         </li>
+        <li>
+            Implémentez <a href="https://www.nuget.org/packages/NLog">Nlog</a> 
+        </li>
     </ul>
 
     <h4>Etape 3</h4>
@@ -107,6 +110,7 @@
                 <li><code>Un livreur ne peut pas livrer deux commandes sur le même horaire.</code></li>
                 <li><code>Un livreur travaille de 8h à 12h30 et de 13h30 17h30.</code></li>
                 <li><code>Nous avons par défaut 2 livreurs (Jean & Paul).</code></li>
+                <li><code>Nous pouvons planifier jusqu'a 15 jours à l'avance.</code></li>
             </ul>
         </ul>
     </li>
@@ -162,6 +166,7 @@
     <ul>
         <li>ajoutez un endpoint <code>GET</code> <code>DHLFakeApi:8080/api/shipping/creneaux</code> pour obtenir les creneaux de livraison possible et compatible.</li>
         <li>modifiez l'endpoint  <code>POST</code> <code>DHLFakeApi:8080/api/shipping</code> pour prendre la date livraison souhaitée.</li>
+        <li>ajoutez un endpoint  <code>GET</code> <code>DHLFakeApi:8080/api/planning</code> pour obtenir les livraison prévues.</li>
     </ul>
     <h4>Choissisez le challenge qui vous plait le plus.</h4>
     <h4>Migration Cloud</h4>
@@ -203,7 +208,7 @@
         <li>Les membres du Support appartiennent à un nouveau rôle <code>SUPPORT</code></li>
         <li>Les membres du support ont accès a toutes les discussions ouvertes.</li>
         <li>Les discutions sont listés et triées par date de derniere réponse du Support. (Non Répondu, Répondu hier, Répondu aujourd'hui)</li>
-        <li>Vous utiliserez <a href="https://learn.microsoft.com/en-us/dotnet/standard/threading/managed-threading-best-practices">SignalR</a> pour la communication.</li>  
+        <li>Vous utiliserez <a href="https://learn.microsoft.com/fr-fr/aspnet/core/signalr/introduction?view=aspnetcore-8.0">SignalR</a> pour la communication.</li>  
         <li>Concevez un espace de discussion en temps réel entre l'utilisateur et un membre du Support. Le client doit pouvoir démarrer la discussion facilement.</li>
         <li>Implémentez un chat bot qui réponds au mieux aux questions fréquentes avec une IA</li>
     </ul>
