@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Final - n°10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: monospace;
+            color: #c7254e;
+            background: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exercice Final</h1>
+    <h2>Exercice Pratique</h2>
+    <p><strong>Durée estimée :</strong> environ 1 semaine à 2 semaines</p>
+    <h3>Objectif</h3>
+    <p>Valider vos acquis, se challenger et se dépasser.</p>
+
+    <h3>Énoncé</h3>
+
+    <h4>Etape 1</h4>
+    <p>Reprenez votre solution Warehouse Management Service <strong>la plus avancée</strong></p>
+    <ul>
+        <li>Implémenter une Authentification et des authorizations</li>
+        <li>Différenciez quatre types d'utilisateurs (Anonyme, Customer, Magasinier,Livreur, Admin)</li>
+
+        <li>Les visiteurs anonymes
+            <ul>
+                <li>Accèdent aux pages <code>home</code> et <code>privacy</code>.</li>
+                <li>Ils peuvent également s'inscrire et s'authentifier pour devenir Customer.</li>
+                <li>Mais n’accèdent pas aux autres pages.</li>
+            </ul>
+        </li>
+        <li>Les membres inscrits (Customer) accèdent à la page <code>Orders</code>
+            <ul>
+                <li>Ils peuvent soummetre une commande. Ils deviennent commanditaire. La commande est crée à l'état
+                    <code>Submited</code>
+                </li>
+                <li>Ils peuvent modifier une commande si celle-ci à l'état <code>Submited</code>.</li>
+                <li>Ils peuvent visualiser le détail d'une commande précédante, mais ne peuvent pas la modifier.</li>
+            </ul>
+        </li>
+        <li>Les magasiniers
+            <ul>
+                <li>Ils visualisent toutes les commandes soumises.</li>
+                <li>Ils peuvent visualiser le détail d'une commande.</li>
+                <li>À partir de l'écran détail, ils marquent les commandes comme <code>Processing</code>.</li>
+                <li>Ils peuvent consulter les plannings de livraison de tous les livreurs</li>
+                <li>Ils peuvent modifier et supprimer les stocks et les articles.</li>
+            </ul>
+        </li>
+        <li>Les livreurs
+            <ul>
+                <li>Ils peuvent consulter <strong>leur</strong> planning de livraison</li>
+            </ul>
+        </li>
+        <li>L’administrateur
+            <ul>
+                <li>Gére les utilisateurs magasinier. (Ajout, Supression, Désactivation)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>Etape 2</h4>
+    <ul>A présent, lorsqu'une commande est soumise par un client
+        <li>
+            le système doit calculer une durée livraison. (aléatoire entre 0 et 120minutes).
+            Ceci va nous être utile pour la suite.
+        </li>
+        <li>
+            Implémentez Nlog
+        </li>
+    </ul>
+
+    <h4>Etape 3</h4>
+    <li>Lorsqu'une commande est à l'état en traitement les magasiniers peuvent
+        <ul>
+            <li>Planifier la livraison de la commande</li>
+            <Li>Pour planifier une commande le magasinier doit:</Li>
+            <ul>
+                <Li>Sélectionner un créneau disponible de livraison.
+                    <code>Ceux-ci lui sont automatiquement proposés.</code></Li>
+                <li>La durée d'une livraison est d'une heure + durée livraison de la commande</li>
+                <li><code>Un livreur ne peut pas livrer deux commandes sur le même horaire.</code></li>
+                <li><code>Un livreur travaille de 8h à 12h30 et de 13h30 17h30.</code></li>
+                <li><code>Nous avons par défaut 2 livreurs (Jean & Paul).</code></li>
+                <li><code>Nous pouvons planifier jusqu'a 15 jours à l'avance.</code></li>
+            </ul>
+        </ul>
+    </li>
+
+
+    <h4>Etape 4</h4>
+    <li>Le livreur peut
+        <ul>
+            <li>Marquer une commande/livraison comme livrée à partir de son planning.</li>
+            <ul>Ce qui entraine:
+                <li>La création d'une facture. Disponible sur le détail d'une commande. Nous devons
+                    pouvoir l'obtenir <code>au format (PDF)</code></li>
+                <li>Une facture détient un numéro unique au format <code>ANNEE-MOIS-NUMERO_FACTURE</code></li>
+                <li>L'envoi d'un email indiquant que la commande est livrée + Facture.</li>
+
+            </ul>
+        </ul>
+    </li>
+
+    <h4>Etape 5 - Coût de livraison</h4>
+
+    <li>Les livreurs ne sont <code>plus</code> salariés de WMS. WMS est facturé a chaque expédition, sur une commande s'ajoute le coût
+        de livraison. Pour l'obtenir faîte appel à l'api DHLFakeApi
+        <ul>
+            <li>l'endpoint <code>POST</code> <code>DHLFakeApi:8080/api/shipping</code></li>
+            <ul>
+                <li>Prends:
+                    <pre>
+{
+    "adress":"20 Rue de la paix",
+    "codePostal":35000,
+    "content":[
+        "x2 souris",
+        "x1 ordinateur"
+    ]
+}
+                </pre>
+                </li>
+                <li>Retourne dans le cas d'un 200
+                    <pre>
+{
+    "shippingNumber":12345,
+    "cost":15.0,
+    "status":"planned"
+}
+                </pre>
+            </ul>
+
+        </ul>
+    </li>
+    <li>Le cout doit être répercuté et visible sur les factures.</li>
+    <li>Déplacez le code la planification des livraisons dans l'api DHLFakeApi</li>
+    <ul>
+        <li>ajoutez un endpoint <code>GET</code> <code>DHLFakeApi:8080/api/shipping/creneaux</code> pour obtenir les creneaux de livraison possible et compatible.</li>
+        <li>modifiez l'endpoint  <code>POST</code> <code>DHLFakeApi:8080/api/shipping</code> pour prendre la date livraison souhaitée.</li>
+        <li>ajoutez un endpoint  <code>GET</code> <code>DHLFakeApi:8080/api/planning</code> pour obtenir les livraison prévues.</li>
+    </ul>
+    <h4>Choissisez le challenge qui vous plait le plus.</h4>
+    <h4>Migration Cloud</h4>
+    <p>La société grandi et les commandes se font toujours plus nombreuses. Il faut pouvoir tenir la charge, une mise à l'échelle est nécéssaire.</p>
+    <ul>
+        <li>Déployer cette solution dans le cloud. Par exemple, utilisez AWS avec Fargate ou Lambda pour construire vos factures et S3 pour les sauvgarder.</li>
+    </ul>
+
+
+    <h4>Problèmes avancés</h4>
+    <p>Deux problèmes subiste dans ce système: </p>
+    <ul>Reglementation: <a href="https://blog.tiime.fr/comment-annuler-une-facture-en-comptabilite">Conformement à la loi anti-fraude, les factures doivent se suivre impérativement. 
+        Aucun saut de numération ne de doit figurer. Si une facture est annulée, un Avoir doit être crée en conséquence. Aucune Facture émise ne doit être suprimmée.</a> 
+        <ul>
+            <li>Vous remarquerez, dans l'état actuel que lorsque que la construction du PDF échoue pour une raison quelconque, le numéro de la facture est consomé sans possibilité de réusage.
+            <li>Implémentez un processus transactionnel <code>tout ou rien</code> pour corriger ce problème.<a href="https://learn.microsoft.com/fr-fr/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application">Utilisez le pattern UnitOfWork</a></li>
+        </ul>
+    </ul>
+    
+    <ul>Deux factures peuvent avoir le même numéro si elles sont crées en même temps.
+        <ul>
+            <li>Corriger cela en utilisant les bonnes pratiques thread safe pour éviter ce problème.<a href="https://learn.microsoft.com/en-us/dotnet/standard/threading/managed-threading-best-practices">Docs (ici)</a></li>
+            <li>Imaginons que la construction du PDF d'une facture est long. (env 15Min) Dans ces conditions, qu'elle solution pourrions nous mettre en place ?</li>
+        </ul>
+    </ul>
+
+
+    <h4>Migration de BDD</h4>
+    <p>Pour des raisons budgetaire nous envisageons de changer SGBD </p>
+    <ul>
+        <li>Migrer de SQL Server à SQLLite.</li>
+        <li>Migrer de SQL Server à MongoDB.</li>
+        <li>Vérifiez l'ingralité du système et son intégration.</li>
+    </ul>
+
+    <h4>ChatBot et Support</h4>
+    <p>Nous avons besoin de mettre un service Support pour accompagner les utilisateurs (Clients) du site</p>
+    <ul>
+        <li>Les membres du Support appartiennent à un nouveau rôle <code>SUPPORT</code></li>
+        <li>Les membres du support ont accès a toutes les discussions ouvertes.</li>
+        <li>Les discutions sont listés et triées par date de derniere réponse du Support. (Non Répondu, Répondu hier, Répondu aujourd'hui)</li>
+        <li>Vous utiliserez <a href="https://learn.microsoft.com/fr-fr/aspnet/core/signalr/introduction?view=aspnetcore-8.0">SignalR</a> pour la communication.</li>  
+        <li>Concevez un espace de discussion en temps réel entre l'utilisateur et un membre du Support. Le client doit pouvoir démarrer la discussion facilement.</li>
+        <li>Implémentez un chat bot qui réponds au mieux aux questions fréquentes avec une IA</li>
+    </ul>
+
+    <h4>Pour aller plus loin, consultez la roadmap:</h4>
+    <ul>
+        <li><a href="https://roadmap.sh/aspnet-core">ASP.NET Core</a></li>
+        <li><a href="https://roadmap.sh/software-architect">Software Architect</a></li>
+        <li><a href="https://roadmap.sh/aws">Cloud Architect (AWS)</a></li>
+    </ul>
+
+    <p>Vous serez évalué sur votre conception, la qualité logicielle et sur le respect des principes de l'architecture
+        propre.</p>
+    <h3>Proposition de solution</h3>
+    <p>Une proposition de solution pour ce TP est placée dans les éléments en téléchargement liés à ce module.</p>
+</body>
+
+</html>

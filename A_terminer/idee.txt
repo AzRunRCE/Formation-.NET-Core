@@ -1,0 +1,4 @@
+Exo10 final
+api laposte fret pour obtenir prix d'expédition, numéro et intégration api
+Génération de facture pdf
+Envoie d'email lors du passage de la commande a shipped.

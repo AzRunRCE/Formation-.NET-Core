@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Formation - Roadmap</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1e1e1e;
+            color: #00ff00;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .roadmap {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .roadmap li {
+            margin: 20px 0;
+            position: relative;
+            padding-left: 40px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+       
+        .roadmap li::before {
+            content: '\1F3AE'; /* Unicode for a joystick icon */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 30px;
+        }
+        .roadmap ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .roadmap li ul li::before {
+            content: '\1F539'; /* Unicode for a small diamond icon */
+        }
+    </style>
+</head>
+<body>
+    <h1>Plan de Formation</h1>
+    <ul class="roadmap">
+        <li>.NET
+            <ul>
+                <li>Garage (Langage C#)
+                    <ul>
+                        <li>Architecture Domain-Centric (DI, SOLID)</li>
+                    </ul>
+                </li>
+                <li>BattaileCorse (Algorithmie)</li>
+                <li>LinQ</li>
+                <li>EntityFramework</li>
+                <li>Dépendances Inversion & Injection</li>
+                <li>WPF
+                    <ul>
+                        <li>Garage
+                            <ul>
+                                <li>Architecture Domain-Centric (DI, SOLID)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>ASP.NET
+                    <ul>
+                        <li>MVC</li>
+                        <li>MVC (Attribut)</li>
+                        <li>API (Rest)</li>
+                        <li>Authentification & Authorization</li>
+                        <li>Architecture Domain-Centric (DI, SOLID)</li>
+                    </ul>
+                </li>
+                <li>TDD</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
