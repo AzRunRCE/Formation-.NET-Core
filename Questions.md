@@ -132,6 +132,27 @@ abstract class Oiseau : Avion
 
 }
 ```
+### Question 8 :
+Quelle est la valeur de voiture1.Moteur à la fin de la fonction "Main" ? 
+```C#
+Voiture FabriquerVoiture(Voiture voitureAFabriquer)
+{
+    voitureAFabriquer.Moteur = "HDi";
+    return voitureAFabriquer;
+}
+
+void Main(string[] args)
+{
+    var voiture1 = new Voiture();
+    var Voiture2 = FabriquerVoiture(voiture1);
+    Console.WriteLine(voiture1.Moteur);
+}
+
+```
+- **"HDi"**
+- null
+- string.Empty
+- Une exception est levée
 
 ## 3. Conversions de type de données
 
