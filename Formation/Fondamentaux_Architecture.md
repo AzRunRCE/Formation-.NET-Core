@@ -29,6 +29,25 @@ Bien sûr, voici une version améliorée du Markdown avec des icônes et une mei
 - [Simon Deny - Principe SOLID](https://youtu.be/0jqhsRkAVbM?si=RRGnfb93C3eg_4w2)
 
 
+## Architecture Propre 
+🎥 [Présentation de l'architecture propre]()
+
+🎥 [Live Coding Partie 1](https://youtu.be/l_4MFKfYeas)
+
+🎥 [Live Coding Partie 2](https://youtu.be/UqefejsH5lo)
+
+📄 [Source](/Demos/DemoTrip/)
+🎥 [Présentation de l'exercice](https://youtu.be/v-HkkoVV8_4)
+
+📝 [Exercices 09 - Conception et Architecture](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex09_Conception_Architecture/ex08.html)
+
+
+📝 [Kata - Refactoring](https://github.com/AzRunRCE/KataTrainings/tree/main/Refactoring/Gestion_BU)
+
+
+
+
+
 
 ## Exercices
 

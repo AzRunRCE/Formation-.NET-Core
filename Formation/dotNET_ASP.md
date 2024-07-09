@@ -52,6 +52,11 @@ Ce style architectural est basés sur le protocole HTTP et utilisent des méthod
 
 Un principe clé de __ est la __, ce qui signifie que chaque requête du client au serveur doit contenir toutes les informations nécessaires pour comprendre et traiter la requête. 
 
+## Les Cookies WEB
+🎥 [Vidéo](https://youtu.be/DRzpqkqusYo)
+👀 [Démo](/Demos/DemoCookieASP.NET/)
+
+
 ## Authentification & Autorisation
 
 🎥 [Vidéo](https://youtu.be/JrWXqhCSE-g)
@@ -59,6 +64,9 @@ Un principe clé de __ est la __, ce qui signifie que chaque requête du client 
 📝 [Exercice 08 - EntityFramework ASP.NET](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex08_Authentification_Et_Authorisation/ex08.html)
 
 
+
+
+https://youtu.be/DRzpqkqusYo
 
 ## Tests Unitaires
 🎥 [Vidéo](https://www.youtube.com/watch?v=XXJni5YyC98)

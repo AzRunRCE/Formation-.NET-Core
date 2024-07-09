@@ -1,4 +1,4 @@
-# TDD - Développez plus rapidement avec TDD
+# Développez plus rapidement avec TDD
 
 Dans ce cours, vous apprendrez à maîtriser le TDD, ou Développement piloté par les tests.
 
@@ -19,3 +19,5 @@ Ce que vous apprendrez:
 📄 [Support PDF](/TDD/TDD_Presentation_Bowling.pdf)
 
 🎥 [Vidéo](https://youtu.be/G5w483dC7L4)
+
+📝 [Kata - Convertisseur Chiffre Romain](https://github.com/AzRunRCE/KataTrainings/tree/main/KataTraining)
