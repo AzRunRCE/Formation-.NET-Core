@@ -41,7 +41,7 @@ Mais si vous le souhaitez, vous pouvez modifier ce comportement par défaut. Si 
 
 🎥 [Vidéo](https://www.youtube.com/watch?v=DhCasNXEPBo)
 
-📝 [Exercice 07 - EntityFramework ASP.NET](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex06_EntityFramework_Console/ex06.html)
+📝 [Exercice 07 - EntityFramework ASP.NET](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex07_EntityFramework_ASP_NET/ex07.html)
 
 ### Questions
 **Texte à trou**
@@ -61,12 +61,9 @@ Un principe clé de __ est la __, ce qui signifie que chaque requête du client 
 
 🎥 [Vidéo](https://youtu.be/JrWXqhCSE-g)
 
-📝 [Exercice 08 - EntityFramework ASP.NET](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex08_Authentification_Et_Authorisation/ex08.html)
+📝 [Exercice 08 - Authentification Et Authorisation ASP.NET](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex08_Authentification_Et_Authorisation/ex08.html)
 
 
-
-
-https://youtu.be/DRzpqkqusYo
 
 ## Tests Unitaires
 🎥 [Vidéo](https://www.youtube.com/watch?v=XXJni5YyC98)
