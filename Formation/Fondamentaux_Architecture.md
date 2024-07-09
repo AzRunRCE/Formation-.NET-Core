@@ -39,7 +39,7 @@ Bien sûr, voici une version améliorée du Markdown avec des icônes et une mei
 📄 [Source](/Demos/DemoTrip/)
 🎥 [Présentation de l'exercice](https://youtu.be/v-HkkoVV8_4)
 
-📝 [Exercices 09 - Conception et Architecture](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex09_Conception_Architecture/ex08.html)
+📝 [Exercices 09 - Conception et Architecture](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex09_Conception_Architecture/ex09.html)
 
 
 
