@@ -42,12 +42,6 @@ Bien sûr, voici une version améliorée du Markdown avec des icônes et une mei
 📝 [Exercices 09 - Conception et Architecture](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex09_Conception_Architecture/ex08.html)
 
 
-📝 [Kata - Refactoring](https://github.com/AzRunRCE/KataTrainings/tree/main/Refactoring/Gestion_BU)
-
-
-
-
-
 
 ## Exercices
 

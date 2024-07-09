@@ -1,7 +1,18 @@
-# Bienvenue sur mon repo Formation .NET-Core!
+# Bienvenue sur mon dépôt dédié à la formation .NET Core !
 
-Je suis Quentin Martinez, développeur .NET depuis 2018 j'écris du code depuis 10ans. J'ai monté cette formation dans le but de transmettre et de maitrisé le développement avec .NET.
+Je suis Quentin Martinez, développeur .NET depuis 2018 et programmeur depuis 10 ans. J'ai créé cette formation pour partager mes connaissances et améliorer mes compétences en développement .NET.
 
-Sur ce dépot, vous trouverez des vidéos, des éxercices que j'ai séléctionné ou concu pour progresser en .NET.
+Dans ce dépôt, vous trouverez des vidéos et des exercices que j'ai sélectionnés ou conçus pour vous aider à progresser en .NET.
 
-Merci à tout ceux qui on contribué @remilesert, @yannCHANTREL
+Merci à tous ceux qui ont contribué, notamment @remilesert et @yannCHANTREL.
+
+# Programme de formation
+
+### 🌱 [C# Les fondamentaux](/Formation/Fondamentaux_dotNET.md)
+### 🪟 [Application lourde avec WPF](/Formation/dotNET_WPF.md)
+### 🌐 [Application Web avec ASP.NET 6](/Formation/dotNET_ASP.md)
+### 🏛️ [Fondamentaux d'Architecture](/Formation/Fondamentaux_Architecture.md)
+### 🏆 [Kata et méthodologie](/Formation/Kata_TDD.md)
+
+## Work in progress
+### ❓ [Quizz]()

@@ -20,4 +20,12 @@ Ce que vous apprendrez:
 
 🎥 [Vidéo](https://youtu.be/G5w483dC7L4)
 
+
 📝 [Kata - Convertisseur Chiffre Romain](https://github.com/AzRunRCE/KataTrainings/tree/main/KataTraining)
+
+## Exercices Refactoring
+📝 [Kata - GestionBU](https://github.com/AzRunRCE/KataTrainings/tree/main/Refactoring/Gestion_BU)
+
+
+
+
