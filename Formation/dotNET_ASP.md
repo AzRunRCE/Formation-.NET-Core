@@ -64,6 +64,9 @@ Un principe clé de __ est la __, ce qui signifie que chaque requête du client 
 📝 [Exercice 08 - Authentification Et Authorisation ASP.NET](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex08_Authentification_Et_Authorisation/ex08.html)
 
 
+## Architecture & Conception
+📝 [Exercice 10 - Final](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex10_Final/ex10.html)
+
 
 ## Tests Unitaires
 🎥 [Vidéo](https://www.youtube.com/watch?v=XXJni5YyC98)
