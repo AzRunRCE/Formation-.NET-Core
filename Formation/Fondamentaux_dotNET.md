@@ -26,11 +26,7 @@ Faux
 > En effet, une solution sous Visual Studio contient fréquemment un ensemble de projets. Par exemple pour packager différemment  l'infrastructure (Bdd, Système de fichier), le code métier et le client (IHM, Web, ou Api)
 
 
-
-
-# Introduction à .NET
-
-## La Language C#
+## Le Language C#
 
 🎥 [Vidéo](https://www.youtube.com/watch?v=9bDiREVDL8k)
 
@@ -38,7 +34,7 @@ Faux
 
 
 
-## Convertion sur les type de données
+## Convertion sur les types de données
 
 🎥 [Vidéo](https://www.youtube.com/watch?v=ms0w2U0SIXU)
 

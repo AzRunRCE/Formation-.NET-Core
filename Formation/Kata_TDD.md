@@ -20,7 +20,6 @@ Ce que vous apprendrez:
 
 🎥 [Vidéo](https://youtu.be/G5w483dC7L4)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G5w483dC7L4?si=HJNAZ19O-0tH_92s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 📝 [Kata - Convertisseur Chiffre Romain](https://github.com/AzRunRCE/KataTrainings/tree/main/KataTraining)
