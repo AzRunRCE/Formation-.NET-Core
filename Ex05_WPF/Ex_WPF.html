@@ -33,13 +33,11 @@
     </p>
 
     <p>Dans votre dépot git créez un nouveau dossier. Depuis Microsoft Visual Studio créez un nouveau projet de type "Application WPF (.NET Framework). 
-    <br>Ciblé la version .NET Framework 4.8.</p>
+    <br>Ciblez la version .NET Framework 4.8.</p>
 
     <h4>Exercice 1 : Prise en main de WPF</h4><br>
 
-    <p>Suivez la playlist suivante pour apprendre les bases du WPF : <a href="https://www.youtube.com/watch?v=t9ivUosw_iI&list=PLih2KERbY1HHOOJ2C6FOrVXIwg4AZ-hk1" target="_blank">Regarder la vidéo sur YouTube</a>
-    </p>
-    <p>En parallèle, prenez en main l'outil en créeant une application simple qui respecte les éléments ci-dessous :
+    <p>Prenez en main Visual Studio et WPF en créeant une application simple qui respecte les éléments ci-dessous :
         <ul>
             <li>Utilisation du modèle MVVM (Model-View-ViewModel)</li>
             <li>Utilisation du Data Binding</li>
@@ -54,12 +52,12 @@
             <li>Créez un dossier MVVM. Dans celui-ci créer une classe qui hérite de INotifyPropertyChanged et implémenter l'interface. Vos Models, votre ViewModel et vos UserControl.cs pourront en hériter pour ne pas réimplémenter INotifyPropertyChanged.</li>
             <li>Créez maintenant dans ce même dossier une classe qui hérite de ICommand et implémenter l'interface. A l'avenir, quand vous voudrez exécuter une méthode à partir d'un élément de l'XAML, vous utiliserez la propriété "Command".</li>
             <li>Adapter vos models à l'utilisation réel de votre interface graphique. Utiliser la librairie AutoMapper, et implémenter des CreateMap pour passer d'un model à un autre.</li>
-            <li>Développer une ListView qui affiche toutes les informations de chaque véhicule. Les options seront séparés par des virgule dans une même colonne.</li>
-            <li>Stylisé votre ListView et déplacer votre style dans un dossier "Styles". Manipuler les Triggers pour stylisé le style de l'item actuellement sélectionné.</li>   
+            <li>Développez une ListView qui affiche toutes les informations de chaque véhicule. Les options seront séparés par des virgule dans une même colonne.</li>
+            <li>Stylisez votre ListView et déplacer votre style dans un dossier "Styles". Manipuler les Triggers pour stylisé le style de l'item actuellement sélectionné.</li>   
         </ol>
     </p>
     
-    <p>Essayé de reproduire un résultat similaire :
+    <p>Essayez de reproduire un résultat similaire :
         <br><img src="Animations/ListViewAnimation.gif">
     </p>
 
@@ -67,17 +65,17 @@
 
     <p> 
         <ol>
-            <li>Créer un Expander à droite de la fenêtre. Placez à l'intérieur toutes les informations du véhicule sélectionné. 
+            <li>Créez un Expander à droite de la fenêtre. Placez à l'intérieur toutes les informations du véhicule sélectionné. 
                 Le cylindre et le prix du moteur doivent être dans des TextBox. Le type du moteur et les options seront dans des ListView.</li>
-            <li>Ajouter un bouton "Appliquer". Au click de celui-ci le véhicule doit être mis à jour et persisté dans la BDD. (Les options seront gérer plus tard). Mettez également la liste à jour.</li>
-            <li>Ajouter a votre Core métier des DTO approprié à chaque opération (add, update, ou remove). Pour la modification de votre véhicule, créer une instance DTO update et passez la au service.</li>
+            <li>Ajoutez un bouton "Appliquer". Au click de celui-ci le véhicule doit être mis à jour et persisté dans la BDD. (Les options seront gérer plus tard). Mettez également la liste à jour.</li>
+            <li>Ajoutez a votre Core métier des DTO approprié à chaque opération (add, update, ou remove). Pour la modification de votre véhicule, créer une instance DTO update et passez la au service.</li>
             <li>Une fois cela fonctionnelle, déplacé le XAML du volet dans un nouveau UserControl. Celui-ci sera réutilisez plus tard pour la création d'un véhicule.
                 La logique derrière devra maintenant être géré par le usercontrol.cs (Pas de ViewModel pour les User Control). 
                 Les paramètres nécessaires seront données par le main via des "DependencyProperty". Créez un eventHandler dans le UserControl pour retourner le véhicule modifié. C'est le Main ViewModel qui s'occupe de modifier et persister le véhicule.</li>
         </ol>
     </p>
 
-    <p>Essayé de reproduire un résultat similaire :
+    <p>Essayez de reproduire un résultat similaire :
         <br><img src="Animations/VoletAnimation.gif">
     </p>
 
@@ -92,7 +90,7 @@
         </ol>
     </p>
 
-    <p>Essayé de reproduire un résultat similaire :
+    <p>Essayez de reproduire un résultat similaire :
         <br><img src="Animations/CreateWindowAnimation.gif">
     </p>
 
@@ -106,7 +104,7 @@
         </ol>
     </p>
 
-    <p>Essayé de reproduire un résultat similaire :
+    <p>Essayez de reproduire un résultat similaire :
         <br><img src="Animations/ManageVehiculeAnimation.gif">
     </p>
 

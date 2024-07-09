@@ -1,8 +1,3 @@
-
-
-
-Sure, here is the reformulated Markdown content with added icons:
-
 # 🏛️ Fondamentaux Architecture
 
 ## 🎓 Crédits

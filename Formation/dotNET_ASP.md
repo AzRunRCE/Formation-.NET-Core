@@ -3,11 +3,6 @@
 
 Dans cette section vous apprendrez à développer avec ASP.NET Core.
 
-## Ressources nécessaires
-Pour le bon déroulement de ce cours vous aurez besoin de ces ressources
-- Dépôts GIT ici
-
-
 ## .NET 6 - ASP NET MVC
 🎥 [Vidéo](https://www.youtube.com/watch?v=om3rGvicuGA)
 

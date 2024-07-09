@@ -1,6 +1,3 @@
-
-Voici la version reformulée avec des icônes :
-
 # 🌐 .NET - Découvrir l'écosystème .NET
 
 ## 🎓 Crédits
@@ -80,3 +77,6 @@ Réponse incorrecte !
 - .NET Core est uniquement destiné au développement d'applications web, tandis que .NET Framework est polyvalent.
 - .NET Core est une plateforme open source et multiplateforme, tandis que .NET Framework est spécifique à Windows.
 - .NET Core est une version plus ancienne de .NET Framework, proposant des fonctionnalités limitées.
+
+# Packages NuGet
+🎥 [Vidéo](https://www.youtube.com/watch?v=8bCglGOVKqs&list=PL0YTS3lJHMdqdWa2eoijuLuENdy3SAbPQ)
