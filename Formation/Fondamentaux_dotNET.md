@@ -1,3 +1,5 @@
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+
 # 🌐 .NET - Découvrir l'écosystème .NET
 
 ## 🎓 Crédits
@@ -13,7 +15,9 @@
 📢 **Abonnez-vous à leurs chaînes !**
 
 ## Introduction à .NET
-🎥 [Vidéo](https://www.youtube.com/watch?v=Ob6X79iVNvM)
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/Ob6X79iVNvM' frameborder='0' allowfullscreen></iframe>
+</div>
 
 
 ### Question 
@@ -28,7 +32,10 @@ Faux
 
 ## Le Language C#
 
-🎥 [Vidéo](https://www.youtube.com/watch?v=9bDiREVDL8k)
+
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/9bDiREVDL8k' frameborder='0' allowfullscreen></iframe>
+</div>
 
 📝 [Exercice 01 - Garage](https://azrunrce.github.io/Formation-.NET-Core/Ex01_Garage/Ex01_Garage.html)
 
@@ -36,21 +43,31 @@ Faux
 
 ## Convertion sur les types de données
 
-🎥 [Vidéo](https://www.youtube.com/watch?v=ms0w2U0SIXU)
 
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/ms0w2U0SIXU' frameborder='0' allowfullscreen></iframe>
+</div>
 
 ## Les délégués
-🎥 [Vidéo](https://www.youtube.com/watch?v=sk7uP1iavPE)
+
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/sk7uP1iavPE' frameborder='0' allowfullscreen></iframe>
+</div>
 
 📝 [Exercice 02 - BattaileCorse](https://azrunrce.github.io/Formation-.NET-Core/Ex02_BatailleCorse/Ex02_BattaileCorse.html)
 
 
 ## Créer sa propre exception
-🎥 [Vidéo](https://www.youtube.com/watch?v=GRoOAxruO4M)
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/GRoOAxruO4M' frameborder='0' allowfullscreen></iframe>
+</div>
 
 
 ## Le langage de requête LINQ
-🎥 [Vidéo](https://www.youtube.com/watch?v=OGaMpp2R0S8)
+
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/OGaMpp2R0S8' frameborder='0' allowfullscreen></iframe>
+</div>
 
 📝 [Exercice 03 - Linq](https://azrunrce.github.io/Formation-.NET-Core/Ex03_Linq/Ex_LINQ.html)
 
@@ -75,4 +92,5 @@ Réponse incorrecte !
 - .NET Core est une version plus ancienne de .NET Framework, proposant des fonctionnalités limitées.
 
 # Packages NuGet
-🎥 [Vidéo](https://www.youtube.com/watch?v=8bCglGOVKqs&list=PL0YTS3lJHMdqdWa2eoijuLuENdy3SAbPQ)
+
+🎥 [Playlist](https://www.youtube.com/watch?v=8bCglGOVKqs&list=PL0YTS3lJHMdqdWa2eoijuLuENdy3SAbPQ)

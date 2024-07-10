@@ -1,3 +1,4 @@
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 # 🏛️ Fondamentaux Architecture
 
 ## 🎓 Crédits
@@ -12,7 +13,9 @@ Bien sûr, voici une version améliorée du Markdown avec des icônes et une mei
 
 ## 🏗️ Application Multi-couche
 
-🎥 [Vidéo](https://youtu.be/L3A1KRJMZBA)
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/L3A1KRJMZBA' frameborder='0' allowfullscreen></iframe>
+</div>
 
 ## 🔍 Principes S.O.L.I.D
 
@@ -26,18 +29,36 @@ Bien sûr, voici une version améliorée du Markdown avec des icônes et une mei
 
 ## 🎥 Vidéos Alternatives
 
-- [Simon Deny - Principe SOLID](https://youtu.be/0jqhsRkAVbM?si=RRGnfb93C3eg_4w2)
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/watch?v=0jqhsRkAVbM' frameborder='0' allowfullscreen></iframe>
+</div>
 
 
 ## Architecture Propre 
-🎥 [Présentation de l'architecture propre]()
 
-🎥 [Live Coding Partie 1](https://youtu.be/l_4MFKfYeas)
+### Présentation de l'architecture propre
+<div class='embed-container'>
+<iframe src='https://youtu.be/yyIaWAEkhBU' frameborder='0' allowfullscreen></iframe>
+</div>
 
-🎥 [Live Coding Partie 2](https://youtu.be/UqefejsH5lo)
 
-📄 [Source](/Demos/DemoTrip/)
-🎥 [Présentation de l'exercice](https://youtu.be/v-HkkoVV8_4)
+### Live Coding 
+<div class='embed-container'>
+<iframe src='https://youtu.be/l_4MFKfYeas' frameborder='0' allowfullscreen></iframe>
+</div>
+
+<div class='embed-container'>
+<iframe src='https://youtu.be/UqefejsH5lo' frameborder='0' allowfullscreen></iframe>
+</div>
+
+
+
+📄 [Source](https://github.com/AzRunRCE/Formation-.NET-Core/tree/main/Demos/DemoTrip/)
+
+
+<div class='embed-container'>
+<iframe src='https://youtu.be/v-HkkoVV8_4' frameborder='0' allowfullscreen></iframe>
+</div>
 
 📝 [Exercices 09 - Conception et Architecture](https://azrunrce.github.io/Formation-.NET-Core/Ex09_Conception_Architecture/ex09.html)
 

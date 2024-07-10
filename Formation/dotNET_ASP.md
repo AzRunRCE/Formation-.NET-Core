@@ -1,12 +1,15 @@
 
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 # .NET - Développer avec ASP.NET Core 6
 
 Dans cette section vous apprendrez à développer avec ASP.NET Core.
 
 ## .NET 6 - ASP NET MVC
-🎥 [Vidéo](https://www.youtube.com/watch?v=om3rGvicuGA)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RewB8WtY1XI?si=TDPRydll9EGoK0ji" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/om3rGvicuGA?si=TDPRydll9EGoK0ji' frameborder='0' allowfullscreen></iframe>
+</div>
 
+### Questions
 Qu’elles sont les affirmations Vrais concernant la différence entre ViewBag, ViewData, et TempData ?
 
 - ViewData et TempData sont des dictionnaires (clé, valeur)
@@ -33,14 +36,21 @@ Mais si vous le souhaitez, vous pouvez modifier ce comportement par défaut. Si 
 
 
 ## Entity Framework
-🎥 [Vidéo](https://www.youtube.com/watch?v=RewB8WtY1XI)
+
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/RewB8WtY1XI?si=TDPRydll9EGoK0ji' frameborder='0' allowfullscreen></iframe>
+</div>
+
 
 📝 [Exercice 06 - EntityFramework Console](https://azrunrce.github.io/Formation-.NET-Core/Ex06_EntityFramework_Console/ex06.html)
 
 
 ## Web API
 
-🎥 [Vidéo](https://www.youtube.com/watch?v=DhCasNXEPBo)
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/DhCasNXEPBo?si=TDPRydll9EGoK0ji' frameborder='0' allowfullscreen></iframe>
+</div>
+
 
 📝 [Exercice 07 - EntityFramework ASP.NET](https://azrunrce.github.io/Formation-.NET-Core/Ex07_EntityFramework_ASP_NET/ex07.html)
 
@@ -54,13 +64,19 @@ Ce style architectural est basés sur le protocole HTTP et utilisent des méthod
 Un principe clé de __ est la __, ce qui signifie que chaque requête du client au serveur doit contenir toutes les informations nécessaires pour comprendre et traiter la requête. 
 
 ## Les Cookies WEB
-🎥 [Vidéo](https://youtu.be/DRzpqkqusYo)
-👀 [Démo](/Demos/DemoCookieASP.NET/)
+
+
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/DRzpqkqusYo?si=TDPRydll9EGoK0ji' frameborder='0' allowfullscreen></iframe>
+</div>
+👀 [Démo](https://github.com/AzRunRCE/Formation-.NET-Core/tree/main/Demos/DemoCookieASP.NET)
 
 
 ## Authentification & Autorisation
 
-🎥 [Vidéo](https://youtu.be/JrWXqhCSE-g)
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/JrWXqhCSE-g?si=TDPRydll9EGoK0ji' frameborder='0' allowfullscreen></iframe>
+</div>
 
 📝 [Exercice 08 - Authentification Et Authorisation ASP.NET](https://azrunrce.github.io/Formation-.NET-Core/Ex08_Authentification_Et_Authorisation/ex08.html)
 
@@ -70,4 +86,7 @@ Un principe clé de __ est la __, ce qui signifie que chaque requête du client 
 
 
 ## Tests Unitaires
-🎥 [Vidéo](https://www.youtube.com/watch?v=XXJni5YyC98)
+
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/XXJni5YyC98?si=TDPRydll9EGoK0ji' frameborder='0' allowfullscreen></iframe>
+</div>
