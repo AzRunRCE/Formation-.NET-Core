@@ -30,7 +30,7 @@ Bien sûr, voici une version améliorée du Markdown avec des icônes et une mei
 ## 🎥 Vidéos Alternatives
 
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/watch?v=0jqhsRkAVbM' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/0jqhsRkAVbM' frameborder='0' allowfullscreen></iframe>
 </div>
 
 
@@ -38,17 +38,17 @@ Bien sûr, voici une version améliorée du Markdown avec des icônes et une mei
 
 ### Présentation de l'architecture propre
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/watch?v=yyIaWAEkhBU' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/yyIaWAEkhBU' frameborder='0' allowfullscreen></iframe>
 </div>
 
 
 ### Live Coding 
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/watch?v=l_4MFKfYeas' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/l_4MFKfYeas' frameborder='0' allowfullscreen></iframe>
 </div>
 
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/watch?v=UqefejsH5lo' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/UqefejsH5lo' frameborder='0' allowfullscreen></iframe>
 </div>
 
 
@@ -57,13 +57,12 @@ Bien sûr, voici une version améliorée du Markdown avec des icônes et une mei
 
 
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/watch?v=v-HkkoVV8_4' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/v-HkkoVV8_4' frameborder='0' allowfullscreen></iframe>
 </div>
 
 
 ### Exercices
 📝 [Exercices 09 - Conception et Architecture](https://azrunrce.github.io/Formation-.NET-Core/Ex09_Conception_Architecture/ex09.html)
-
 
 
 ## Exercices

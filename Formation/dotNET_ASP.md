@@ -83,17 +83,17 @@ Un principe clé de __ est la __, ce qui signifie que chaque requête du client 
 
 ## Gestion des utilisateurs
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/watch?v=CjKPbKDk8Qw' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/CjKPbKDk8Qw' frameborder='0' allowfullscreen></iframe>
 </div>
 
 ## Gestion des autorisations d'accès
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/watch?v=oB4Lx2JCSBM' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/oB4Lx2JCSBM' frameborder='0' allowfullscreen></iframe>
 </div>
 
 ## Personaliser les écrans d'authentification
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/watch?v=PrOERizvmEg' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/PrOERizvmEg' frameborder='0' allowfullscreen></iframe>
 </div>
 
 
