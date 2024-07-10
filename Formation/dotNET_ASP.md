@@ -5,6 +5,7 @@ Dans cette section vous apprendrez à développer avec ASP.NET Core.
 
 ## .NET 6 - ASP NET MVC
 🎥 [Vidéo](https://www.youtube.com/watch?v=om3rGvicuGA)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RewB8WtY1XI?si=TDPRydll9EGoK0ji" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Qu’elles sont les affirmations Vrais concernant la différence entre ViewBag, ViewData, et TempData ?
 
@@ -25,23 +26,23 @@ La valeur TempData deviendra nulle une fois la requête suivante terminée par d
 Mais si vous le souhaitez, vous pouvez modifier ce comportement par défaut. Si vous regardez la définition de la classe Controller, vous trouverez la signature suivante de la propriété TempData
 
 
-📝 [Exercice 04 - MVC](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex04_MVC/Ex04_MVC.html)
+📝 [Exercice 04 - MVC](https://azrunrce.github.io/Formation-.NET-Core/Ex04_MVC/Ex04_MVC.html)
 
 
-📝 [Exercice 05 - MVC_Attribut](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex05_MVC_Attribut/Ex05%20MVC_Attribut.html)
+📝 [Exercice 05 - MVC_Attribut](https://azrunrce.github.io/Formation-.NET-Core/Ex05_MVC_Attribut/Ex05%20MVC_Attribut.html)
 
 
 ## Entity Framework
 🎥 [Vidéo](https://www.youtube.com/watch?v=RewB8WtY1XI)
 
-📝 [Exercice 06 - EntityFramework Console](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex06_EntityFramework_Console/ex06.html)
+📝 [Exercice 06 - EntityFramework Console](https://azrunrce.github.io/Formation-.NET-Core/Ex06_EntityFramework_Console/ex06.html)
 
 
 ## Web API
 
 🎥 [Vidéo](https://www.youtube.com/watch?v=DhCasNXEPBo)
 
-📝 [Exercice 07 - EntityFramework ASP.NET](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex07_EntityFramework_ASP_NET/ex07.html)
+📝 [Exercice 07 - EntityFramework ASP.NET](https://azrunrce.github.io/Formation-.NET-Core/Ex07_EntityFramework_ASP_NET/ex07.html)
 
 ### Questions
 **Texte à trou**
@@ -61,11 +62,11 @@ Un principe clé de __ est la __, ce qui signifie que chaque requête du client 
 
 🎥 [Vidéo](https://youtu.be/JrWXqhCSE-g)
 
-📝 [Exercice 08 - Authentification Et Authorisation ASP.NET](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex08_Authentification_Et_Authorisation/ex08.html)
+📝 [Exercice 08 - Authentification Et Authorisation ASP.NET](https://azrunrce.github.io/Formation-.NET-Core/Ex08_Authentification_Et_Authorisation/ex08.html)
 
 
 ## Architecture & Conception
-📝 [Exercice 10 - Final](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex10_Final/ex10.html)
+📝 [Exercice 10 - Final](https://azrunrce.github.io/Formation-.NET-Core/Ex10_Final/ex10.html)
 
 
 ## Tests Unitaires

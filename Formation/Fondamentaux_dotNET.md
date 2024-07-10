@@ -30,7 +30,7 @@ Faux
 
 🎥 [Vidéo](https://www.youtube.com/watch?v=9bDiREVDL8k)
 
-📝 [Exercice 01 - Garage](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex01_Garage/Ex01_Garage.html)
+📝 [Exercice 01 - Garage](https://azrunrce.github.io/Formation-.NET-Core/Ex01_Garage/Ex01_Garage.html)
 
 
 
@@ -42,7 +42,7 @@ Faux
 ## Les délégués
 🎥 [Vidéo](https://www.youtube.com/watch?v=sk7uP1iavPE)
 
-📝 [Exercice 02 - BattaileCorse](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex02_BatailleCorse/Ex02_BattaileCorse.html)
+📝 [Exercice 02 - BattaileCorse](https://azrunrce.github.io/Formation-.NET-Core/Ex02_BatailleCorse/Ex02_BattaileCorse.html)
 
 
 ## Créer sa propre exception
@@ -52,7 +52,7 @@ Faux
 ## Le langage de requête LINQ
 🎥 [Vidéo](https://www.youtube.com/watch?v=OGaMpp2R0S8)
 
-📝 [Exercice 03 - Linq](https://htmlpreview.github.io/?https://github.com/AzRunRCE/Formation-.NET-Core/blob/main/Ex03_Linq/Ex_LINQ.html)
+📝 [Exercice 03 - Linq](https://azrunrce.github.io/Formation-.NET-Core/Ex03_Linq/Ex_LINQ.html)
 
 ### Questions
 Le langage C# a été développé pour permettre
