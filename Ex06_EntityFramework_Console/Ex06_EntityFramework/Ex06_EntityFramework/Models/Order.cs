@@ -12,11 +12,13 @@ namespace Ex06_EntityFramework.Models
         public int Id { get; set; }
 
 
-        public string CustomerName { get; set; }
+        public int CustomerId { get; set; }
 
         public string Email { get; set; }
 
         public string ShippingAddress { get; set; }
+
+        public string City { get; set; }
 
         public DateTime OrderDate { get; set; }
 
