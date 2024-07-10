@@ -37,6 +37,7 @@ Faux
 <iframe src='https://www.youtube.com/embed/9bDiREVDL8k' frameborder='0' allowfullscreen></iframe>
 </div>
 
+### Exercices
 📝 [Exercice 01 - Garage](https://azrunrce.github.io/Formation-.NET-Core/Ex01_Garage/Ex01_Garage.html)
 
 
@@ -54,6 +55,7 @@ Faux
 <iframe src='https://www.youtube.com/embed/sk7uP1iavPE' frameborder='0' allowfullscreen></iframe>
 </div>
 
+### Exercices
 📝 [Exercice 02 - BattaileCorse](https://azrunrce.github.io/Formation-.NET-Core/Ex02_BatailleCorse/Ex02_BattaileCorse.html)
 
 
@@ -69,6 +71,7 @@ Faux
 <iframe src='https://www.youtube.com/embed/OGaMpp2R0S8' frameborder='0' allowfullscreen></iframe>
 </div>
 
+### Exercices
 📝 [Exercice 03 - Linq](https://azrunrce.github.io/Formation-.NET-Core/Ex03_Linq/Ex_LINQ.html)
 
 ### Questions

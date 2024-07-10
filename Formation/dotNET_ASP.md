@@ -29,9 +29,11 @@ La valeur TempData deviendra nulle une fois la requête suivante terminée par d
 Mais si vous le souhaitez, vous pouvez modifier ce comportement par défaut. Si vous regardez la définition de la classe Controller, vous trouverez la signature suivante de la propriété TempData
 
 
+### Exercices
 📝 [Exercice 04 - MVC](https://azrunrce.github.io/Formation-.NET-Core/Ex04_MVC/Ex04_MVC.html)
 
 
+### Exercices
 📝 [Exercice 05 - MVC_Attribut](https://azrunrce.github.io/Formation-.NET-Core/Ex05_MVC_Attribut/Ex05%20MVC_Attribut.html)
 
 
@@ -52,6 +54,7 @@ Mais si vous le souhaitez, vous pouvez modifier ce comportement par défaut. Si 
 </div>
 
 
+### Exercices
 📝 [Exercice 07 - EntityFramework ASP.NET](https://azrunrce.github.io/Formation-.NET-Core/Ex07_EntityFramework_ASP_NET/ex07.html)
 
 ### Questions
@@ -67,7 +70,7 @@ Un principe clé de __ est la __, ce qui signifie que chaque requête du client 
 
 
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/embed/DRzpqkqusYo?si=TDPRydll9EGoK0ji' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/DRzpqkqusYo' frameborder='0' allowfullscreen></iframe>
 </div>
 👀 [Démo](https://github.com/AzRunRCE/Formation-.NET-Core/tree/main/Demos/DemoCookieASP.NET)
 
@@ -75,18 +78,45 @@ Un principe clé de __ est la __, ce qui signifie que chaque requête du client 
 ## Authentification & Autorisation
 
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/embed/JrWXqhCSE-g?si=TDPRydll9EGoK0ji' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/JrWXqhCSE-g' frameborder='0' allowfullscreen></iframe>
 </div>
 
+## Gestion des utilisateurs
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/watch?v=CjKPbKDk8Qw' frameborder='0' allowfullscreen></iframe>
+</div>
+
+## Gestion des autorisations d'accès
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/watch?v=oB4Lx2JCSBM' frameborder='0' allowfullscreen></iframe>
+</div>
+
+## Personaliser les écrans d'authentification
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/watch?v=PrOERizvmEg' frameborder='0' allowfullscreen></iframe>
+</div>
+
+
+
+### Exercices
 📝 [Exercice 08 - Authentification Et Authorisation ASP.NET](https://azrunrce.github.io/Formation-.NET-Core/Ex08_Authentification_Et_Authorisation/ex08.html)
-
-
-## Architecture & Conception
-📝 [Exercice 10 - Final](https://azrunrce.github.io/Formation-.NET-Core/Ex10_Final/ex10.html)
-
 
 ## Tests Unitaires
 
 <div class='embed-container'>
-<iframe src='https://www.youtube.com/embed/XXJni5YyC98?si=TDPRydll9EGoK0ji' frameborder='0' allowfullscreen></iframe>
+<iframe src='https://www.youtube.com/embed/XXJni5YyC98' frameborder='0' allowfullscreen></iframe>
 </div>
+
+
+## Configuration 
+
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/OYbs0U4q3ug' frameborder='0' allowfullscreen></iframe>
+</div>
+
+## Architecture & Conception
+
+### Exercices
+📝 [Exercice 10 - Final](https://azrunrce.github.io/Formation-.NET-Core/Ex10_Final/ex10.html)
+
+
