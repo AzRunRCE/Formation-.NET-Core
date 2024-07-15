@@ -208,9 +208,9 @@ Update-Database</code></pre>
     <li>Respectez les bonnes pratiques d'architecture et de programmation.</li>
     <li>Implémentez les classes concrétes de ces interfaces.</li>
     <ul>
-	<pre>
+        <pre>
 	
-   <code>
+        <code>
 public interface IWarehouseService
 {
 	// Method to fetch all warehouses
@@ -251,11 +251,13 @@ public interface IOrderService
 	double getAverageArticlePerOrder();
 }
    </code></pre>
-	    <li>En utilisant vos services crées, implémentez un parseur pour insérer les données issu du fichier <a href="./ressources/export.csv">export.csv</a></li>
-		<li>Faites évoluer le schéma de base de données et vos services, pour que les Customer soient dans une table à part.</li>
-		<p>Un Customer peut détenir plusieurs commandes.</p>
-		<p>Une commande appartient à un seul Customer.</p>
-		<li>Faite de même pour les Adresses des Customers.</li>
+        <li>En utilisant vos services crées, implémentez un parseur pour insérer les données issu du fichier <a href="./ressources/export.csv">export.csv</a></li>
+        <li>Vous ne pouvez pas utiliser les <a href="https://learn.microsoft.com/en-us/ef/core/modeling/relationships/mapping-attributes">Data Annotation</a>. A la place, vous devez utilier la Fluent API.</li>
+        <li>Faites évoluer le schéma de base de données et vos services, pour que les Customer soient dans une table à part.</li>
+        <p>Un Customer peut détenir plusieurs commandes.</p>
+        <p>Une commande appartient à un seul Customer.</p>
+        <li>Faite de même pour les Adresses des Customers.</li>
+        <p>Une adresse doit être un <a href="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/implement-value-objects">ValueObject</a>.</p>
     </ul>
     <h2>Livrables :</h2>
     <ul>
