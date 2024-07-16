@@ -26,9 +26,10 @@ Ce que vous apprendrez:
 📄 [Support PDF](/TDD/TDD_Presentation_Bowling.pdf)
 
 
+### Exercices
 📝 [Kata - Convertisseur Chiffre Romain](https://github.com/AzRunRCE/KataTrainings/tree/main/KataTraining)
 
-## Exercices Refactoring
+### Exercices Refactoring
 📝 [Kata - GestionBU](https://github.com/AzRunRCE/KataTrainings/tree/main/Refactoring/Gestion_BU)
 
 

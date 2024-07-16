@@ -462,9 +462,9 @@
       ]
     },
     {
-      "is_multichoice": true,
+      "is_multichoice": false,
       "id": "19",
-      "label": "Comment utiliser les Razor Pages et comparer leur utilisation avec le modèle traditionnel MVC ?",
+      "label": "Qu'elle affirmation est vraie concernant Razor Pages ?",
       "choices": [
         {
           "is_right": true,
@@ -480,10 +480,771 @@
           "is_right": false,
           "label": "Les Razor Pages ne supportent pas le binding de modèles de données.",
           "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "video_introduction_dotnet_q1",
+      "label": "Si un problème survient lors de la création d'une commande en production, quelles étapes devrions-nous suivre pour résoudre le problème et déployer un correctif ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Créer une branche hotFixes/creationCommande depuis la branche production",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Créer une branche hotFixes/creationCommande depuis la branche dev",
+          "explanations": []
         },
         {
           "is_right": true,
-          "label": "Les Razor Pages organisent le code de la page de manière plus cohérente en séparant la logique de la page et la logique métier.",
+          "label": "Modifier le code sur la branche hotFixes/creationCommande",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Fusionner la branche hotFixes/creationCommande dans la branche dev",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Fusionner la branche hotFixes/creationCommande dans la branche production",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Déployer le correctif",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "video_introduction_dotnet_q2",
+      "label": "Quelles sont les différences entre .NET Framework et .NET ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": ".NET est un framework open-source et multiplateforme, tandis que .NET Framework est limité à Windows et n'est pas open-source.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": ".NET est uniquement destiné aux applications de bureau traditionnelles, tandis que .NET Framework est destiné aux applications modernes et basées sur le cloud.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": ".NET Framework est un framework open-source et multiplateforme, tandis que .NET est limité à Windows et n'est pas open-source.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": ".NET et .NET Framework sont identiques en termes de fonctionnalités et de portée, mais diffèrent uniquement par leur nom.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "video_introduction_dotnet_q3",
+      "label": "Quelle est la principale différence dans la gestion des injections de dépendances entre ASP.NET Framework et ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "ASP.NET Framework utilise un conteneur d'injection de dépendances intégré, tandis qu'ASP.NET Core nécessite des bibliothèques tierces pour l'injection de dépendances.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "ASP.NET Core utilise un conteneur d'injection de dépendances intégré, tandis qu'ASP.NET Framework nécessite généralement des bibliothèques tierces comme Unity ou Autofac pour gérer l'injection de dépendances.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "ASP.NET Framework et ASP.NET Core utilisent tous deux des conteneurs d'injection de dépendances intégrés de la même manière.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "ASP.NET Core ne prend pas en charge l'injection de dépendances, tandis qu'ASP.NET Framework en fait usage intensif.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "video_introduction_dotnet_q4",
+      "label": "Quels frameworks sont compatibles avec Linux ou Android ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": ".NET Core",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Mono",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Xamarin",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": ".NET Framework",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "video_introduction_dotnet_q5",
+      "label": "Parmi ces libraries quels sont celles qui sont des ORM (Object-Relational-Database) ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Entity Framework Core",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "NHibernate",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Dapper",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Datadog",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "video_introduction_dotnet_q6",
+      "label": "Quels sont les langages que Microsoft propose sur la plateforme NET ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "C#",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "VB.NET",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "F#",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Python",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "bases_csharp_q1",
+      "label": "Quelles sont les deux implémentations possibles d'une propriété en C# ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Auto-implémentée",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Avec attribut privé",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Avec méthode publique",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Avec méthode protégée",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "bases_csharp_q2",
+      "label": "Le constructeur est-il obligatoire en C# ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Non",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Oui, toujours",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Seulement pour les classes abstraites",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "bases_csharp_q3",
+      "label": "De quoi une classe peut-elle hériter ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Une interface",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Une structure",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Une classe abstraite",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "bases_csharp_q4",
+      "label": "Quelle est le type de collection qui expose une méthode Add et Remove ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "List",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Array",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Queue",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "bases_csharp_q5",
+      "label": "Que donne le code ci-dessous ?\nvar variable = 10;\nvariable = \"Hello\";\nConsole.WriteLine(variable);",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "Le code compile et affiche \"10\".",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Le code compile et affiche \"Hello\".",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Le code provoque une erreur de compilation.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Le code compile et affiche \"System.Object\".",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "bases_csharp_q6",
+      "label": "Quelles sont les conditions pour créer une extension d'un type existant ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "La méthode doit être dans une classe \"static\"",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "La classe doit s'appeler \"Extension\"",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "La méthode doit être \"static\"",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Le premier paramètre doit avoir le mot-clé \"this\"",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "type_conversions_q1",
+      "label": "Quelle est la différence entre une conversion implicite et explicite ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Une conversion implicite est automatique et sans perte de données ; une conversion explicite nécessite un casting et peut perdre des données.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Une conversion implicite est toujours plus rapide que la conversion explicite.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Une conversion implicite ne fonctionne que pour les types de valeur ; une conversion explicite fonctionne pour tous les types.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Une conversion explicite est automatique ; une conversion implicite nécessite un casting.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "type_conversions_q2",
+      "label": "Laquelle de ces instructions est correcte et permet de caster le véhicule \"jeep\" en \"Voiture\" ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "(Voiture) jeep",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "jeep as voiture",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Convert.ToVoiture(jeep)",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "type_conversions_q3",
+      "label": "Est-ce qu'il est possible de créer une conversion implicite pour un type personnalisé ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Oui, en définissant un opérateur de conversion implicite dans le type personnalisé.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Non, seules les conversions explicites sont possibles pour les types personnalisés.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Oui, mais seulement vers les types primitifs comme int et double.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Non, les conversions implicites sont réservées aux types de base uniquement.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "delegates_q1",
+      "label": "Un délégué est-il réassignable ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Oui",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Non, jamais",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "delegates_q2",
+      "label": "Si j'ajoute plusieurs méthodes à un même délégué, que se passe-t-il ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Toutes les méthodes sont appelées dans l'ordre où elles ont été ajoutées.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Seule la dernière méthode ajoutée est appelée lorsque le délégué est invoqué.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Une exception est levée si plusieurs méthodes sont ajoutées au délégué.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Les méthodes sont ajoutées mais ne seront pas appelées lorsque le délégué est invoqué.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "delegates_q3",
+      "label": "Combien de paramètres peut avoir un délégué personnalisé ?",
+      "choices": [
+        {
+          "is_right": true,
+         "label": "Jusqu'à 16 paramètres maximum.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Jusqu'à 10 paramètres maximum.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Uniquement 1 ou 2 paramètres.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Uniquement 5 paramètres.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "delegates_q4",
+      "label": "Est-ce que le code suivant décrit un délégué valide en c# ?\nAction<string> print = message => Console.WriteLine(message);\nprint('Hello World!');",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Oui",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Non",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "exception_creation_q1",
+      "label": "Laquelle de ces déclaration d'exception personnalisée est correcte",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "public class MyException : Exception",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "public class MyException : Application",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "public class MyException : Error",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "exception_creation_q2",
+      "label": "A partir de cette classe d'exception personnalisée : \npublic class MyException : Exception\n{\n public MyException() { }\n}\nLequel de ces lancement d'exception est correcte",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "throw new MyException();",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "throw MyException();",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "throw new MyException;",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "throw MyException;",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "linq_q1",
+      "label": "Quelles sont les deux méthodes possibles pour travailler avec LINQ ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Requête",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Méthodes",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "SQL",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Appel de données",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "linq_q2",
+      "label": "Que permet la méthode Linq Distinct() ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Récupérer les éléments non dupliqués",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Récupérer les éléments non flottants",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Récupérer les éléments un par un",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "linq_q3",
+      "label": "Laquelle de ces expressions permet de renvoyer un tableau avec l'âge des personnes ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "people.Select(p => p.Age).ToArray()",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "people.Select(p => new { p.Age })",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "people.Select(p => p.Name)",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "linq_q4",
+      "label": "Vous avez une liste d'élèves, où chaque élève a une liste de notes. Laquelle des propositions suivantes permet d'obtenir un tableau a une dimension contenant toutes les notes de tous les élèves de la liste d'eleves ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "var toutesLesNotes = eleves.SelectMany(eleve => eleve.Notes);",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "var toutesLesNotes = eleves.Select(eleve => eleve.Notes);",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "var eleves.SelectMany(function(eleve) { return eleve.Notes; }).ToList();",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "multi_layer_applications_q1",
+      "label": "Dans une architecture multi-couche, quelles sont les trois couches principales d'une architecture trois tiers ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Couche Présentation, Couche Traitement, Couche Accès aux Données",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Couche Interface Utilisateur, Couche Réseau, Couche Sécurité",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Couche Front-End, Couche Back-End, Couche Middleware",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Couche API, Couche Middleware, Couche Base de Données",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "multi_layer_applications_q2",
+      "label": "Qu'elles sont les réponsabilités d'un Contrôleur dans une application ASP.NET Core MVC ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Transformer et préparer les données fournies en entrées",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Implémenter l'algorithme/logique métier",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Communiquer avec la base de données",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Valider les données en entrée",
+          "explanations": []
+        },
+        
+        {
+          "is_right": true,
+          "label": "Transformer et préparer les données à destination de la sortie",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "architecture_q1",
+      "label": "Dans une application en architecture propre/hexagonale, dans quels projets acceptons nous conventionnelement de faire usage des Annotations du Framework ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "Projet App.Core",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Projet App.SharedKernel",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Projet App.Infrastructure",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Projet App.Web",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "architecture_q2",
+      "label": "Pour une interface IEmailService, dans une architecture hexagonal, quel projet doit détenir cette classe ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Projet App.Core",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Projet App.SharedKernel",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Projet App.Infrastructure",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Projet App.Web",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "architecture_q3",
+      "label":"Considérons ce code :\nclass Service {\n Database database;\n\n Service() {\n this.database = new Database();\n }\n}\n\n\nQuel principe de programmation ce code viol-t-il ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "Le principe de substitution de Liskov",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Le principe d'ouverture/fermeture",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Le principe de ségrégation des interfaces",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Le principe d'inversion des dépendances",
           "explanations": []
         }
       ]

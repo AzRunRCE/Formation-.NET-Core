@@ -14,5 +14,4 @@ Merci à tous ceux qui ont contribué, notamment [@remilesert](https://github.co
 ### 🏛️ [Fondamentaux d'Architecture](/Formation/Fondamentaux_Architecture.md)
 ### 🏆 [Kata et méthodologie](/Formation/Kata_TDD.md)
 
-## Work in progress
-### ❓ [Quizz]()
+### ❓ [Quizz](/Quizz)
