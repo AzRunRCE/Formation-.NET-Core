@@ -1,0 +1,492 @@
+{
+  "name": "Questionnaire .NET / ASP.NET",
+  "id": "dotnet_questions_id",
+  "questions": [
+    {
+      "is_multichoice": false,
+      "id": "1",
+      "label": "Quelle est la différence entre les architectures MVC et MVVM dans le contexte d'ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "MVC est utilisé pour les applications web tandis que MVVM est utilisé pour les applications mobiles.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "MVC divise l'application en Modèle, Vue et Contrôleur, tandis que MVVM introduit le concept de bindings entre la Vue et le ViewModel.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "MVC est plus récent que MVVM et offre plus de flexibilité.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "MVVM est spécifiquement conçu pour les applications ASP.NET Core.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "2",
+      "label": "Quand utiliseriez-vous le pattern Repository avec l'Entity Framework dans une application ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "Pour simplifier les tests unitaires en isolant la couche de données.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Pour abstraire la logique de persistance et permettre des changements de source de données sans affecter le reste de l'application.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Pour améliorer les performances des requêtes SQL.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Pour centraliser la gestion des opérations CRUD (Create, Read, Update, Delete).",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "3",
+      "label": "Quel est le concept de middleware dans ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "Un service de gestion des utilisateurs.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Un composant qui gère les requêtes et réponses HTTP dans le pipeline de requêtes.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Une bibliothèque pour la gestion des bases de données.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Un outil de déploiement d'applications.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "4",
+      "label": "Comment gérez-vous l'ordre d'exécution des middlewares dans l'application pipeline ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "En les ajoutant dans l'ordre correct dans la méthode Configure de la classe Startup.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En utilisant des annotations sur les classes middleware.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En les configurant dans le fichier appsettings.json.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En les déclarant dans la méthode ConfigureServices de la classe Startup.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "5",
+      "label": "Comment configurer et utiliser la politique d'autorisation dans ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "En créant des classes de politique personnalisées.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En définissant des politiques d'autorisation dans la méthode ConfigureServices et en les appliquant aux contrôleurs ou actions.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En utilisant des attributs comme [Authorize(Policy = \"NomDeLaPolitique\")].",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En configurant les règles de sécurité dans le fichier appsettings.json.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": false,
+      "id": "6",
+      "label": "Comment gérez-vous les migrations de base de données dans Entity Framework Core ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "En utilisant les commandes Add-Migration et Update-Database dans la console du gestionnaire de package.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En modifiant directement la base de données.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En utilisant des scripts SQL personnalisés.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En configurant les migrations dans le fichier appsettings.json.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "7",
+      "label": "Comment optimisez-vous les requêtes LINQ pour améliorer les performances dans une application ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "En utilisant le chargement paresseux (Lazy Loading) et le chargement explicite (Explicit Loading).",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En évitant les jointures et les relations complexes.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En utilisant les méthodes AsNoTracking() et Include() de manière appropriée.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En écrivant des requêtes SQL à la place des requêtes LINQ.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "8",
+      "label": "Quelles sont les meilleures pratiques pour améliorer les performances d'une application ASP.NET Core en production ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "Minimiser l'utilisation de middlewares.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Utiliser la mise en cache (caching) pour les données fréquemment accédées.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Activer la compression des réponses HTTP.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Utiliser des services monolithiques au lieu de microservices.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "9",
+      "label": "Comment configurez-vous le caching dans ASP.NET Core pour améliorer la performance de l'application ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "En utilisant le middleware ResponseCompression.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En utilisant les attributs [ResponseCache] sur les contrôleurs et actions appropriés.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En configurant des services de cache comme MemoryCache ou DistributedCache.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En configurant le caching dans le fichier appsettings.json.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "10",
+      "label": "Comment configurez-vous le déploiement continu d'une application ASP.NET Core en utilisant des outils comme Azure DevOps ou GitHub Actions ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "En configurant des pipelines de build et de release pour automatiser le processus de déploiement.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En déployant manuellement l'application à chaque mise à jour.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En utilisant des scripts de déploiement automatisés dans le fichier YAML de configuration du pipeline.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En configurant des notifications pour chaque déploiement.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "11",
+      "label": "Comment gérez-vous les configurations sensibles (comme les secrets et les clés API) dans un pipeline de CI/CD ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "En les stockant directement dans le fichier de configuration de l'application.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En utilisant des services de gestion des secrets comme Azure Key Vault ou AWS Secrets Manager.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En configurant des variables d'environnement dans le pipeline de CI/CD.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En les encryptant manuellement dans le code source.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "13",
+      "label": "Quels outils utilisez-vous pour analyser et assurer la qualité du code dans vos projets ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Visual Studio Code Analysis et StyleCop.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "SonarQube pour l'analyse continue de la qualité du code.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Postman pour les tests d'API.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Azure DevOps pour le déploiement continu.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "14",
+      "label": "Quelles sont les pratiques courantes pour sécuriser une application ASP.NET Core contre les attaques courantes comme XSS, CSRF, et les injections SQL ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Utiliser des mécanismes de validation et de sanitation des entrées utilisateur.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Activer la journalisation détaillée pour toutes les requêtes.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Utiliser les attributs [ValidateAntiForgeryToken] pour se protéger contre les attaques CSRF.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Utiliser des ORM comme Entity Framework pour éviter les injections SQL.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "15",
+      "label": "Comment configurer HTTPS et forcer son utilisation dans une application ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "En configurant les règles de firewall.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En ajoutant le middleware UseHttpsRedirection dans la méthode Configure de la classe Startup.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En configurant un certificat SSL dans les paramètres de l'application.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En utilisant un service externe pour gérer le cryptage HTTPS.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "16",
+      "label": "Comment gérez-vous la versioning des API dans ASP.NET Core pour maintenir la compatibilité ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "En modifiant directement les routes existantes.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En utilisant des namespaces différents pour chaque version.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En utilisant des attributs comme [ApiVersion] et [Route] pour spécifier la version des contrôleurs.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En créant une nouvelle application pour chaque version.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "17",
+      "label": "Comment implémenter une API RESTful en utilisant ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "En utilisant des fichiers JSON pour configurer les routes.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En utilisant des contrôleurs avec les attributs [ApiController] et [Route].",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En suivant les conventions REST pour les verbes HTTP (GET, POST, PUT, DELETE).",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En utilisant SignalR pour la communication en temps réel.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "18",
+      "label": "Comment intégrez-vous des frameworks front-end modernes comme Angular ou React avec une application ASP.NET Core ?",
+      "choices": [
+        {
+          "is_right": false,
+          "label": "En utilisant WebForms pour héberger les composants front-end.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En configurant le middleware UseSpa dans la méthode Configure de la classe Startup.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "En utilisant des modèles de projet ASP.NET Core spécifiques pour Angular ou React.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "En intégrant les fichiers front-end directement dans le dossier wwwroot.",
+          "explanations": []
+        }
+      ]
+    },
+    {
+      "is_multichoice": true,
+      "id": "19",
+      "label": "Comment utiliser les Razor Pages et comparer leur utilisation avec le modèle traditionnel MVC ?",
+      "choices": [
+        {
+          "is_right": true,
+          "label": "Les Razor Pages offrent une approche plus simple et plus directe pour créer des pages web par rapport au modèle MVC.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Les Razor Pages remplacent entièrement le modèle MVC dans ASP.NET Core.",
+          "explanations": []
+        },
+        {
+          "is_right": false,
+          "label": "Les Razor Pages ne supportent pas le binding de modèles de données.",
+          "explanations": []
+        },
+        {
+          "is_right": true,
+          "label": "Les Razor Pages organisent le code de la page de manière plus cohérente en séparant la logique de la page et la logique métier.",
+          "explanations": []
+        }
+      ]
+    }
+  ]
+}

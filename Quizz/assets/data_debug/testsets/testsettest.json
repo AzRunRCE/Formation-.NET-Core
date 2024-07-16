@@ -1,0 +1,98 @@
+{
+    "name": "(DVA-C02) > Test Set 1",
+    "id": "DVA_C02_Test_Set_1",
+    "questions": [
+      {
+        "is_multichoice": true,
+        "id": "cde1cc1f-1b71-4b70-b448-46fbe954dd2b",
+        "label": "Q. 10  A data analytics firm that operates its IT infrastructure on the AWS Cloud aims to swiftly build and deploy its flagship application in response to any modifications in the source code. In your capacity as a Developer Associate, which recommendations would you propose to initiate deployment? (Choose two)",
+        "choices": [
+          {
+            "is_right": true,
+            "label": "Keep the source code in an Amazon S3 bucket and start AWS CodePipeline whenever a file in the S3 bucket is updated ",
+            "explanations": []
+          },
+          {
+            "is_right": false,
+            "label": "Keep the source code in Amazon EFS and start AWS CodePipeline whenever a file is updated",
+            "explanations": null
+          },
+          {
+            "is_right": false,
+            "label": "Keep the source code in an Amazon S3 bucket and set up AWS CodePipeline to recur at an interval of every 15 minutes",
+            "explanations": null
+          },
+          {
+            "is_right": false,
+            "label": "Keep the source code in an Amazon EBS volume and start AWS CodePipeline whenever there are updates to the source code",
+            "explanations": null
+          },
+          {
+            "is_right": true,
+            "label": "Keep the source code in an AWS CodeCommit repository and start AWS CodePipeline whenever a change is pushed to the CodeCommit repository ",
+            "explanations": []
+          }
+        ]
+      },
+      {
+        "is_multichoice": true,
+        "id": "0f63539c-3b51-4a61-a826-96ff0a67b8df",
+        "label": "Q. 25  A company specializing in platform-as-a-service for cloud communications facilitates software developers to programmatically employ their offerings for sending and receiving text messages. The initial platform lacked a scalable structure, as all elements were hosted on a single server. Consequently, it needs a redesign to ensure high availability and scalability.\nWhich of the subsequent choices offer viable options for implementing the updated architecture? (Choose two)",
+        "choices": [
+          {
+            "is_right": false,
+            "label": "EBS + RDS",
+            "explanations": []
+          },
+          {
+            "is_right": true,
+            "label": "API Gateway + Lambda ",
+            "explanations": []
+          },
+          {
+            "is_right": true,
+            "label": "ALB + ECS ",
+            "explanations": []
+          },
+          {
+            "is_right": false,
+            "label": "CloudWatch + CloudFront",
+            "explanations": []
+          },
+          {
+            "is_right": false,
+            "label": "SES + S3",
+            "explanations": []
+          }
+        ]
+      },
+      {
+        "is_multichoice": false,
+        "id": "641fc2e9-ce73-42fb-9947-ff0278ac0f6f",
+        "label": "Q. 26  In the context of a company utilizing AWS Lambda functions triggered by various AWS services like Amazon Kinesis Data Firehose, Amazon API Gateway, Amazon Simple Storage Service, and Amazon CloudWatch Events, these Lambda functions share a common trait: handling substantial workloads encompassing tasks such as extensive data analysis, processing large files, and intricate statistical computations.\nHow can you enhance the performance of your AWS Lambda functions while keeping your code intact?",
+        "choices": [
+          {
+            "is_right": false,
+            "label": "Change the instance type for your Lambda function",
+            "explanations": []
+          },
+          {
+            "is_right": false,
+            "label": "Change your Lambda function runtime to use Golang",
+            "explanations": []
+          },
+          {
+            "is_right": true,
+            "label": "Increase the RAM assigned to your Lambda function ",
+            "explanations": []
+          },
+          {
+            "is_right": false,
+            "label": "Increase the Lambda function timeout",
+            "explanations": []
+          }
+        ]
+      }
+    ],
+    "categorieId": 385
+  }
