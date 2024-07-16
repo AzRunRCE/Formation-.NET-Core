@@ -1,6 +1,6 @@
-# Bienvenue sur ce dépôt dédié à la formation .NET Core !
+# Formation .NET Core
 
-Je suis Quentin Martinez, développeur .NET depuis 2018 et programmeur depuis 10 ans. J'ai créé cette formation pour partager mes connaissances et améliorer mes compétences en développement .NET.
+Bonjour et bienvenue sur cette formation, je suis Quentin Martinez, développeur .NET depuis 2018. J'ai créé cette formation pour partager mes connaissances et améliorer mes compétences en développement .NET.
 
 Dans ce dépôt, vous trouverez des vidéos et des exercices que j'ai sélectionnés ou conçus pour vous aider à progresser en .NET.
 
