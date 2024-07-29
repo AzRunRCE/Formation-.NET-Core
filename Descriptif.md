@@ -3,7 +3,7 @@
 #### Durée estimée : 2 mois
 #### Format : 8h à 10h de vidéo réparties en 35 vidéos
 #### Exercices : 12 exercices intégrés aux vidéos (exercices spécifiques et fil rouge)
-#### Quizz : 48 questions disponibles
+#### Questionnaire d'évaluation à l'entrée et à la sortie.
 
 ---
 
