@@ -91,7 +91,7 @@ Processus de déploiement des applications ASP.NET Core sur différents environn
 
 **Extras**
 
-- **Développer avec TDD (Test-Driven Development)**
+**Développer avec TDD (Test-Driven Development)**
 
 Apprentissage de la méthode de développement piloté par les tests pour améliorer la qualité du code.
 
@@ -99,7 +99,7 @@ Apprentissage de la méthode de développement piloté par les tests pour améli
    - **Bowling (0.5 jour)** : Projet de développement d'une application en utilisant TDD.
 
 
-- **Développer avec WPF (Windows Presentation Foundation)**
+**Développer avec WPF (Windows Presentation Foundation)**
 
 Introduction au développement d'applications de bureau avec WPF.
 
