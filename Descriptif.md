@@ -1,4 +1,4 @@
-### Descriptif de Formation: Formation .NET & ASP.NET CORE
+### Descriptif de Formation .NET & ASP.NET CORE
 
 #### Durée estimée : 2 mois
 #### Format : 8h à 10h de vidéo réparties en 35 vidéos
