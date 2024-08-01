@@ -119,4 +119,19 @@ Un principe clé de __ est la __, ce qui signifie que chaque requête du client 
 ### Exercices
 📝 [Exercice 10 - Final](https://azrunrce.github.io/Formation-.NET-Core/Ex10_Final/ex10.html)
 
+### Blazor
+Ces articles introduisent plutôt bien blazor.
+
+<div class='embed-container'>
+   <iframe src="https://www.youtube.com/embed/FvuWAvCcp-M?si=FvT_qGf72-fcoatq" frameborder='0' allowfullscreen></iframe>
+</div>
+
+<div class='embed-container'>
+<iframe src='https://www.youtube.com/embed/QXxNlpjnulI?si=gR-UrCjFN_Q9fnvW' frameborder='0' allowfullscreen></iframe>
+</div>
+
+### A lire
+[Blazor pour .NET 8 : un framework révolutionnaire](
+https://dotnet.developpez.com/actu/351062/Blazor-pour-NET-8-un-framework-revolutionnaire-qui-permet-aux-developpeurs-NET-de-creer-des-applications-web-interactives-en-utilisant-C-au-lieu-de-JavaScript/)
+
 
