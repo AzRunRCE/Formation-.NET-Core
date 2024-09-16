@@ -13,5 +13,6 @@ Merci à tous ceux qui ont contribué, notamment [@remilesert](https://github.co
 ### 🌐 [Application Web avec ASP.NET 6](/Formation/dotNET_ASP.md)
 ### 🏛️ [Fondamentaux d'Architecture](/Formation/Fondamentaux_Architecture.md)
 ### 🏆 [Kata et méthodologie](/Formation/Kata_TDD.md)
+### 🏆 [Ressources Supp.](/Formation/Ressources_supp.md)
 
 ### ❓ [Quizz](https://azrunrce.github.io/Formation-.NET-Core/Quizz)
